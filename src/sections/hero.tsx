@@ -17,7 +17,7 @@ export function Hero() {
       <div className="noise absolute inset-0 -z-10 opacity-40" />
       <motion.div
         aria-hidden="true"
-        className="absolute left-1/2 top-24 -z-10 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full border border-cyan-300/30"
+        className="absolute left-1/2 top-24 -z-10 h-72 w-72 sm:h-[28rem] sm:w-[28rem] -translate-x-1/2 rounded-full border border-cyan-300/30"
         style={{ y }}
       />
 
