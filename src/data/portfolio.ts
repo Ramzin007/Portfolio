@@ -234,7 +234,7 @@ export const projects: Project[] = [
     status: "Done",
     featured: false,
     category: "Dashboard",
-    thumbnail: "/images/project-student.svg",
+    thumbnail: "/images/projects/student-portal/student-portal-home.jpg",
     description:
       "A student management platform concept for centralizing academic and student-related information through responsive dashboards.",
     tech: ["React.js", "JavaScript", "Tailwind CSS", "Express.js", "SQL", "REST APIs"],
@@ -253,7 +253,10 @@ export const projects: Project[] = [
       "Reusable dashboard components and predictable grid layouts for consistent rendering across screen sizes.",
     github: "https://github.com/muhammedma-2006/StudentPortal",
     demo: "",
-    screenshots: ["/images/project-student.svg", "/images/project-bloodlink.svg"],
+    screenshots: [
+      "/images/projects/student-portal/student-portal-home.jpg",
+      "/images/project-student.svg",
+    ],
   },
   {
     id: "phishguard",
