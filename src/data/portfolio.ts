@@ -270,7 +270,7 @@ export const projects: Project[] = [
     status: "Done",
     featured: false,
     category: "Security Awareness",
-    thumbnail: "/images/project-phishguard.svg",
+    thumbnail: "/images/projects/phishguard/phishguard-warning.jpg",
     description:
       "A cybersecurity-focused web application and Chrome extension concept for phishing awareness and unsafe link education.",
     tech: ["React.js", "JavaScript", "Tailwind CSS", "Node.js", "REST APIs", "GitHub"],
@@ -289,7 +289,10 @@ export const projects: Project[] = [
       "Simple UI flows and focused interaction states to keep security education quick and approachable.",
     github: "https://github.com/Ramzin007/PhishGuard",
     demo: "",
-    screenshots: ["/images/project-phishguard.svg", "/images/project-hackeuropa.svg"],
+    screenshots: [
+      "/images/projects/phishguard/phishguard-warning.jpg",
+      "/images/project-phishguard.svg",
+    ],
   },
   {
     id: "blog-web-app",
