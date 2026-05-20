@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ExternalLink, GitBranch, Search } from "lucide-react";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { projects } from "@/data/portfolio";
 import type { Project } from "@/types/portfolio";
 import { Badge } from "@/components/ui/badge";
@@ -123,16 +123,19 @@ export function Projects() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
   const categories = ["All", ...Array.from(new Set(projects.map((project) => project.category)))];
-  const filtered = useMemo(
-    () =>
-      projects.filter((project) => {
-        const matchesCategory = category === "All" || project.category === category;
-        const haystack = `${project.title} ${project.description} ${project.tech.join(" ")}`.toLowerCase();
-        return matchesCategory && haystack.includes(query.toLowerCase());
-      }),
-    [category, query],
+  const matchesFilters = useCallback((project: Project) => {
+    const matchesCategory = category === "All" || project.category === category;
+    const haystack = `${project.title} ${project.description} ${project.tech.join(" ")}`.toLowerCase();
+    return matchesCategory && haystack.includes(query.toLowerCase());
+  }, [category, query]);
+  const featured = useMemo(
+    () => projects.filter((project) => project.featured && matchesFilters(project)),
+    [matchesFilters],
   );
-  const featured = projects.filter((project) => project.featured);
+  const filtered = useMemo(
+    () => projects.filter((project) => !project.featured && matchesFilters(project)),
+    [matchesFilters],
+  );
 
   return (
     <Section
