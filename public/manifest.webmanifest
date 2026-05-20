@@ -1,0 +1,16 @@
+{
+  "name": "Aarav Mehta Portfolio",
+  "short_name": "Aarav",
+  "description": "Premium developer portfolio built with Next.js.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08080b",
+  "theme_color": "#06b6d4",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

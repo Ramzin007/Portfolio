@@ -1,0 +1,10 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#08080B"/>
+  <rect x="72" y="72" width="1056" height="486" rx="42" fill="#101015" stroke="white" stroke-opacity=".14"/>
+  <text x="108" y="230" fill="white" font-family="Arial" font-size="72" font-weight="700">Aarav Mehta</text>
+  <text x="108" y="310" fill="#67E8F9" font-family="Arial" font-size="42" font-weight="700">Frontend Engineer & Product Designer</text>
+  <text x="108" y="390" fill="#D4D4D8" font-family="Arial" font-size="28">Next.js • TypeScript • SaaS Interfaces • Full Stack Apps</text>
+  <circle cx="990" cy="214" r="90" fill="#06B6D4" fill-opacity=".7"/>
+  <circle cx="910" cy="360" r="120" fill="#8B5CF6" fill-opacity=".5"/>
+  <circle cx="1030" cy="430" r="82" fill="#F43F5E" fill-opacity=".58"/>
+</svg>

@@ -1,0 +1,16 @@
+Aarav Mehta
+Frontend Engineer & Product-Minded Full Stack Developer
+
+Email: hello@aarav.dev
+Location: Bengaluru, India
+
+Summary
+Frontend-focused full stack developer specializing in Next.js, TypeScript, accessible UI, SaaS dashboards, and product engineering.
+
+Selected Projects
+- Atlas CRM Command Center: pipeline analytics, command palette, role-based dashboards.
+- Pulse AI Support Copilot: AI ticket triage, human review workflow, SLA monitoring.
+- Nova Commerce Studio: headless storefront builder with CMS-ready sections.
+
+Skills
+Next.js, React, TypeScript, Tailwind CSS, Framer Motion, Node.js, PostgreSQL, Prisma, Vercel, Figma.
