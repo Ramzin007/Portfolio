@@ -7,10 +7,19 @@ import { Card } from "@/components/ui/card";
 import { Reveal } from "@/components/shared/reveal";
 import { Section } from "@/components/shared/section";
 
-const days = Array.from({ length: 84 }, (_, index) => {
+const mockHeatmapDays = Array.from({ length: 84 }, (_, index) => {
+  const date = new Date();
+  date.setDate(date.getDate() - (83 - index));
+  const dateStr = date.toISOString().split("T")[0];
   const level = (index * 7 + index) % 5;
-  return level;
+  return { date: dateStr, count: level * 2, level };
 });
+
+const formatDateStr = (dateStr: string) => {
+  const [year, month, day] = dateStr.split("-").map(Number);
+  const date = new Date(year, month - 1, day);
+  return date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+};
 
 interface LiveStats {
   repos: number;
@@ -22,6 +31,7 @@ interface LiveStats {
 
 export function GithubStats() {
   const [stats, setStats] = useState<LiveStats>(githubStats);
+  const [heatmapDays, setHeatmapDays] = useState<{ date: string; count: number; level: number }[]>(mockHeatmapDays);
   const [isLive, setIsLive] = useState(false);
 
   useEffect(() => {
@@ -74,11 +84,78 @@ export function GithubStats() {
           .sort((a, b) => b.value - a.value)
           .slice(0, 5);
 
+        // Fetch live contribution calendar
+        let liveContributionsCount = githubStats.contributions;
+        let liveStreak = githubStats.streak;
+
+        try {
+          const calendarRes = await fetch("https://github-contributions-api.jogruber.de/v4/Ramzin007");
+          if (calendarRes.ok) {
+            const calendarData = await calendarRes.json();
+
+            // Calculate total contributions
+            if (calendarData.total) {
+              liveContributionsCount = Object.values(calendarData.total).reduce(
+                (sum: number, val: any) => sum + val,
+                0
+              );
+            }
+
+            // Calculate current streak
+            if (calendarData.contributions) {
+              const sorted = calendarData.contributions.sort((a: any, b: any) =>
+                a.date.localeCompare(b.date)
+              );
+              const todayStr = new Date().toISOString().split("T")[0];
+              const filtered = sorted.filter((c: any) => c.date <= todayStr);
+
+              let currentStreak = 0;
+              const checkDate = new Date(todayStr);
+              const contribMap = new Map<string, number>(filtered.map((c: any) => [c.date as string, c.count as number]));
+
+              if ((contribMap.get(todayStr) || 0) > 0) {
+                currentStreak = 1;
+                while (true) {
+                  checkDate.setDate(checkDate.getDate() - 1);
+                  const dateStr = checkDate.toISOString().split("T")[0];
+                  if ((contribMap.get(dateStr) || 0) > 0) {
+                    currentStreak++;
+                  } else {
+                    break;
+                  }
+                }
+              } else {
+                checkDate.setDate(checkDate.getDate() - 1);
+                const yesterdayStr = checkDate.toISOString().split("T")[0];
+                if ((contribMap.get(yesterdayStr) || 0) > 0) {
+                  currentStreak = 1;
+                  while (true) {
+                    checkDate.setDate(checkDate.getDate() - 1);
+                    const dateStr = checkDate.toISOString().split("T")[0];
+                    if ((contribMap.get(dateStr) || 0) > 0) {
+                      currentStreak++;
+                    } else {
+                      break;
+                    }
+                  }
+                }
+              }
+              liveStreak = currentStreak || githubStats.streak;
+
+              // Set heatmap days (last 84 days)
+              const finalContributions = filtered.length >= 84 ? filtered.slice(-84) : sorted.slice(-84);
+              setHeatmapDays(finalContributions);
+            }
+          }
+        } catch (calErr) {
+          console.error("Error fetching live GitHub contribution calendar:", calErr);
+        }
+
         setStats({
           repos: userData.public_repos ?? githubStats.repos,
           stars: totalStars,
-          contributions: githubStats.contributions, // Keep static contributions as fallback (GraphQL needed for live)
-          streak: githubStats.streak,
+          contributions: liveContributionsCount,
+          streak: liveStreak,
           languages: sortedLanguages.length > 0 ? sortedLanguages : githubStats.languages,
         });
         setIsLive(true);
@@ -105,18 +182,18 @@ export function GithubStats() {
               )}
             </div>
             <div className="mt-6 grid grid-cols-12 gap-2" aria-label="GitHub contribution graph">
-              {days.map((level, index) => (
+              {heatmapDays.map((day, index) => (
                 <div
                   key={index}
                   className={[
-                    "aspect-square rounded",
-                    level === 0 && "bg-zinc-200 dark:bg-white/10",
-                    level === 1 && "bg-emerald-200 dark:bg-emerald-900",
-                    level === 2 && "bg-emerald-300 dark:bg-emerald-700",
-                    level === 3 && "bg-emerald-400 dark:bg-emerald-500",
-                    level === 4 && "bg-emerald-500 dark:bg-emerald-300",
+                    "aspect-square rounded transition-colors duration-200",
+                    day.level === 0 && "bg-zinc-200 dark:bg-white/10",
+                    day.level === 1 && "bg-emerald-200 dark:bg-emerald-900",
+                    day.level === 2 && "bg-emerald-300 dark:bg-emerald-700",
+                    day.level === 3 && "bg-emerald-400 dark:bg-emerald-500",
+                    day.level === 4 && "bg-emerald-500 dark:bg-emerald-300",
                   ].filter(Boolean).join(" ")}
-                  title={`${level} contribution level`}
+                  title={`${day.count} contribution${day.count === 1 ? "" : "s"} on ${formatDateStr(day.date)}`}
                 />
               ))}
             </div>
