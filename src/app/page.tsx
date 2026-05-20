@@ -5,7 +5,6 @@ import { GithubStats } from "@/sections/github-stats";
 import { Hero } from "@/sections/hero";
 import { Projects } from "@/sections/projects";
 import { Skills } from "@/sections/skills";
-import { Testimonials } from "@/sections/testimonials";
 import { Footer } from "@/components/layout/footer";
 import { profile } from "@/data/portfolio";
 
@@ -33,7 +32,6 @@ export default function Home() {
         <Skills />
         <Projects />
         <ExperienceEducation />
-        <Testimonials />
         <GithubStats />
         <Contact />
       </main>
