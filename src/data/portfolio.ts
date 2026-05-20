@@ -201,7 +201,7 @@ export const projects: Project[] = [
     status: "Live",
     featured: true,
     category: "Event Website",
-    thumbnail: "/images/project-hackeuropa.svg",
+    thumbnail: "/images/projects/hack-europa/hack-europa-prize.png",
     description:
       "An official event website for Hack Europa focused on event information, participant engagement, and a modern hackathon experience.",
     tech: ["React.js", "Next.js", "JavaScript", "Tailwind CSS", "Responsive Design", "GitHub"],
@@ -220,7 +220,13 @@ export const projects: Project[] = [
       "Static-friendly page structure, optimized section hierarchy, and responsive Tailwind styling.",
     github: "https://github.com/Ramzin007/hack-europa-2.0",
     demo: "https://hack-europa-2-0.vercel.app/",
-    screenshots: ["/images/project-hackeuropa.svg", "/images/project-movie.svg"],
+    screenshots: [
+      "/images/projects/hack-europa/hack-europa-prize.png",
+      "/images/projects/hack-europa/hack-europa-about.png",
+      "/images/projects/hack-europa/hack-europa-guidelines.png",
+      "/images/projects/hack-europa/hack-europa-events-log.png",
+      "/images/projects/hack-europa/hack-europa-awaits.png",
+    ],
   },
   {
     id: "student-portal",
