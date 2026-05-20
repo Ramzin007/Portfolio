@@ -1,16 +1,16 @@
-Aarav Mehta
-Frontend Engineer & Product-Minded Full Stack Developer
+Muhammed Ramzin P
+BTech IT Student • Full Stack Developer • Backend-Focused Learner
 
-Email: hello@aarav.dev
-Location: Bengaluru, India
+Email: muhammedramzinp0@gmail.com
 
 Summary
-Frontend-focused full stack developer specializing in Next.js, TypeScript, accessible UI, SaaS dashboards, and product engineering.
+BTech IT student at CUSAT focused on full-stack development, backend engineering, and scalable web applications.
 
 Selected Projects
-- Atlas CRM Command Center: pipeline analytics, command palette, role-based dashboards.
-- Pulse AI Support Copilot: AI ticket triage, human review workflow, SLA monitoring.
-- Nova Commerce Studio: headless storefront builder with CMS-ready sections.
+- BloodLink: blood donation and donor management platform.
+- Movie Library Website: TMDB API movie discovery platform.
+- Hack Europa Official Website: live event website for a hackathon platform.
+- Student Portal: student management platform concept.
 
 Skills
-Next.js, React, TypeScript, Tailwind CSS, Framer Motion, Node.js, PostgreSQL, Prisma, Vercel, Figma.
+React.js, Next.js, JavaScript, Tailwind CSS, Node.js, Express.js, REST APIs, MongoDB, SQL, Git, GitHub.

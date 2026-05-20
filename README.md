@@ -1,4 +1,4 @@
-# Aarav Mehta Portfolio
+# Muhammed Ramzin P Portfolio
 
 A production-grade personal portfolio built with Next.js App Router, TypeScript, Tailwind CSS, Framer Motion, Radix/shadcn-style UI primitives, Lucide Icons, SEO metadata, structured data, and a CMS-ready data architecture.
 

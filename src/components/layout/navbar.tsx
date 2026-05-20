@@ -17,6 +17,11 @@ export function Navbar({ onCommand }: { onCommand: () => void }) {
   const active = useActiveSection(sectionIds);
   const { theme, setTheme } = useTheme();
   const mounted = useMounted();
+  const initials = profile.name
+    .split(/\s+/)
+    .slice(0, 3)
+    .map((part) => part[0])
+    .join("");
 
   const links = (
     <>
@@ -46,8 +51,8 @@ export function Navbar({ onCommand }: { onCommand: () => void }) {
         className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-zinc-200/70 bg-white/75 px-3 py-2 shadow-soft backdrop-blur-2xl dark:border-white/10 dark:bg-zinc-950/65"
       >
         <Link href="#" className="flex items-center gap-3 rounded-full pr-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
-          <span className="grid size-10 place-items-center rounded-full bg-zinc-950 text-sm font-black text-white dark:bg-white dark:text-zinc-950">
-            AM
+          <span className="grid size-10 place-items-center rounded-full bg-zinc-950 text-[0.7rem] font-black text-white dark:bg-white dark:text-zinc-950">
+            {initials}
           </span>
           <span className="hidden text-sm font-semibold text-zinc-950 dark:text-white sm:block">
             {profile.name}
