@@ -27,7 +27,7 @@ import type {
 
 export const profile = {
   name: "Muhammed Ramzin P",
-  role: "BTech IT Student • Full Stack Developer • Backend-Focused Learner",
+  role: "Full Stack Developer",
   location: "",
   email: "muhammedramzinp0@gmail.com",
   phone: "+91 62389 88808",
