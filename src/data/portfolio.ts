@@ -144,10 +144,10 @@ export const projects: Project[] = [
   {
     id: "bloodlink",
     title: "BloodLink",
-    status: "In Progress",
+    status: "Done",
     featured: true,
     category: "Full Stack",
-    thumbnail: "/images/project-bloodlink.svg",
+    thumbnail: "/images/projects/bloodlink/bloodlink-home.jpg",
     description:
       "A blood donation and donor management platform designed to connect donors and recipients efficiently during emergencies.",
     tech: ["React.js", "JavaScript", "Tailwind CSS", "Express.js", "MongoDB", "REST APIs"],
@@ -156,17 +156,23 @@ export const projects: Project[] = [
       "Responsive donor and recipient workflows",
       "Organized donor data management concepts",
       "Emergency-focused search and access patterns",
-      "Backend integration planned around REST APIs",
+      "Hospital and donor dashboard workflows",
     ],
     challenges:
       "Designing a clear information flow for emergency use cases while keeping the interface simple and accessible.",
     architecture:
-      "React frontend with planned Node.js and Express API integration, MongoDB persistence, and modular full-stack project structure.",
+      "React frontend with Node.js and Express API integration, MongoDB persistence, and modular full-stack project structure.",
     performance:
       "Mobile-first layout, reusable UI components, and lightweight client-side interactions for fast browsing.",
-    github: "https://github.com/Ramzin007/BloodLink",
+    github: "https://github.com/tmswalih/Bloodlink",
     demo: "",
-    screenshots: ["/images/project-bloodlink.svg", "/images/project-student.svg"],
+    screenshots: [
+      "/images/projects/bloodlink/bloodlink-home.jpg",
+      "/images/projects/bloodlink/bloodlink-hospital-dashboard.jpg",
+      "/images/projects/bloodlink/bloodlink-about.jpg",
+      "/images/projects/bloodlink/bloodlink-donor-dashboard.jpg",
+      "/images/projects/bloodlink/bloodlink-login.jpg",
+    ],
   },
   {
     id: "movie-library",
