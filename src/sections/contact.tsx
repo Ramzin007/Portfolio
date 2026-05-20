@@ -51,9 +51,9 @@ export function Contact() {
     >
       <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
         <Reveal>
-          <Card className="h-full p-7">
+          <Card className="h-full p-5 sm:p-7">
             <BadgeLike>{profile.availability}</BadgeLike>
-            <div className="mt-8 grid gap-5">
+            <div className="mt-8 grid gap-4 sm:gap-5">
               {[
                 { icon: Mail, label: "Email", value: profile.email, href: `mailto:${profile.email}` },
                 { icon: Smartphone, label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, "")}` },
@@ -63,20 +63,20 @@ export function Contact() {
               ].map((item) => {
                 const Icon = item.icon;
                 return (
-                  <a key={item.label} href={item.href} className="flex gap-4 rounded-2xl p-2 transition hover:bg-zinc-100 dark:hover:bg-white/10">
-                    <div className="grid size-12 shrink-0 place-items-center rounded-2xl bg-cyan-100 text-cyan-700 dark:bg-cyan-400/15 dark:text-cyan-300">
+                  <a key={item.label} href={item.href} className="flex gap-3 sm:gap-4 rounded-2xl p-1.5 sm:p-2 transition hover:bg-zinc-100 dark:hover:bg-white/10 min-w-0">
+                    <div className="grid size-11 sm:size-12 shrink-0 place-items-center rounded-2xl bg-cyan-100 text-cyan-700 dark:bg-cyan-400/15 dark:text-cyan-300">
                       <Icon className="size-5" />
                     </div>
-                    <div>
-                      <p className="text-sm text-zinc-500">{item.label}</p>
-                      <p className="font-semibold text-zinc-950 dark:text-white">{item.value}</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs sm:text-sm text-zinc-500">{item.label}</p>
+                      <p className="font-semibold text-zinc-950 dark:text-white break-words text-sm sm:text-base leading-tight mt-0.5">{item.value}</p>
                     </div>
                   </a>
                 );
               })}
             </div>
-            <div className="mt-8 rounded-2xl border border-zinc-200 bg-[linear-gradient(135deg,#dff7ff,#f7e7ff,#ffe8ef)] p-5 dark:border-white/10 dark:bg-[linear-gradient(135deg,#082f49,#2e1065,#4c0519)]">
-              <div className="rounded-xl border border-white/50 bg-white/45 p-5 backdrop-blur dark:border-white/10 dark:bg-white/10">
+            <div className="mt-8 rounded-2xl border border-zinc-200 bg-[linear-gradient(135deg,#dff7ff,#f7e7ff,#ffe8ef)] p-4 sm:p-5 dark:border-white/10 dark:bg-[linear-gradient(135deg,#082f49,#2e1065,#4c0519)]">
+              <div className="rounded-xl border border-white/50 bg-white/45 p-4 sm:p-5 backdrop-blur dark:border-white/10 dark:bg-white/10">
                 <p className="font-semibold text-zinc-950 dark:text-white">Current focus</p>
                 <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-300">
                   Backend systems, API architecture, database fundamentals, DSA, and building practical full-stack applications with clean user experiences.
@@ -86,7 +86,7 @@ export function Contact() {
           </Card>
         </Reveal>
         <Reveal delay={0.08}>
-          <Card className="p-7">
+          <Card className="p-5 sm:p-7">
             <form onSubmit={handleSubmit(onSubmit)} className="grid gap-5" noValidate>
               <FieldError message={errors.name?.message}>
                 <Input {...register("name")} placeholder="Your name" aria-invalid={Boolean(errors.name)} />
@@ -120,5 +120,9 @@ function FieldError({ children, message }: { children: React.ReactNode; message?
 }
 
 function BadgeLike({ children }: { children: React.ReactNode }) {
-  return <span className="inline-flex rounded-full bg-emerald-100 px-4 py-2 text-sm font-semibold text-emerald-800 dark:bg-emerald-400/15 dark:text-emerald-300">{children}</span>;
+  return (
+    <span className="inline-flex rounded-full bg-emerald-100 px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold text-emerald-800 dark:bg-emerald-400/15 dark:text-emerald-300 text-center leading-tight">
+      {children}
+    </span>
+  );
 }
