@@ -10,17 +10,17 @@ export function About() {
     <Section
       id="about"
       eyebrow="About"
-      title="A builder who thinks in product outcomes, not just components."
-      description="I care about the whole path from user intent to shipped experience: strategy, information architecture, design quality, engineering rigor, and measurable performance."
+      title="A BTech IT student building toward strong full-stack and backend engineering."
+      description="I am focused on turning hands-on project work into practical engineering skill: responsive products, clean architecture, APIs, databases, and scalable system fundamentals."
     >
       <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
         <Reveal>
           <Card className="h-full p-6 sm:p-8">
             <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-              I’m a computer science student and frontend-focused full stack developer who enjoys turning ambiguous requirements into clean, usable systems. My strongest work sits where interface craft meets technical architecture: dashboards, SaaS workflows, AI-assisted tools, and high-converting portfolio or product sites.
+              I am a BTech IT student at CUSAT focused on full-stack development, backend engineering, and scalable web applications. I started with frontend-heavy projects and I am now intentionally moving deeper into backend systems, API architecture, and system design fundamentals.
             </p>
             <p className="mt-5 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-              My current goal is to join a product-minded engineering team where I can learn from senior builders, contribute to real customer surfaces, and keep sharpening the relationship between design, code, and business context.
+              My goal is to build software products that are technically solid, user-focused, and scalable. I keep improving through real projects, problem solving, collaborative hackathon work, and consistent hands-on learning.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {counters.map((counter) => (

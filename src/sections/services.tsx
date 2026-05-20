@@ -11,9 +11,9 @@ export function Services() {
   return (
     <Section
       id="services"
-      eyebrow="Services"
-      title="Focused ways I can help teams and founders move faster."
-      description="Pricing-style cards make the offer clear for freelance clients while still feeling professional for recruiters."
+      eyebrow="Engineering Focus"
+      title="What I am building, learning, and applying through real projects."
+      description="A practical, honest snapshot of the areas I can contribute to now and the engineering skills I am actively strengthening."
     >
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {services.map((service, index) => {
@@ -33,7 +33,7 @@ export function Services() {
                   ))}
                 </ul>
                 <Button asChild className="mt-6" variant={index === 1 ? "gradient" : "secondary"}>
-                  <a href="#contact">Discuss Project</a>
+                  <a href="#contact">Connect</a>
                 </Button>
               </Card>
             </Reveal>

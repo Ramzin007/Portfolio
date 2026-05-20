@@ -12,7 +12,7 @@ export function ExperienceEducation() {
 
   return (
     <>
-      <Section id="experience" eyebrow="Experience" title="Practical work across internships, freelance delivery, and open source.">
+      <Section id="experience" eyebrow="Experience" title="Self-directed project work, hackathon collaboration, and continuous technical growth.">
         <div className="relative mx-auto max-w-4xl">
           <div className="absolute bottom-0 left-4 top-0 hidden w-px bg-zinc-200 dark:bg-white/10 sm:block" />
           <div className="grid gap-6">
@@ -44,7 +44,7 @@ export function ExperienceEducation() {
         </div>
       </Section>
 
-      <Section id="education" eyebrow="Education" title="Academic foundation with product-building momentum.">
+      <Section id="education" eyebrow="Education" title="Information Technology foundation with strong project-building momentum.">
         <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
             <Card className="h-full p-7">
@@ -80,7 +80,7 @@ export function ExperienceEducation() {
         </div>
       </Section>
 
-      <Section id="certifications" eyebrow="Certifications" title="Proof points from design, cloud, and frontend programs.">
+      <Section id="certifications" eyebrow="Certifications" title="Certificates and workshops that support my full-stack learning path.">
         <div className="grid gap-5 md:grid-cols-3">
           {certifications.map((certification, index) => (
             <Reveal key={certification.title} delay={index * 0.06}>

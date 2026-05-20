@@ -18,7 +18,7 @@ export type SkillCategory = {
 export type Project = {
   id: string;
   title: string;
-  status: "Live" | "Beta" | "Case Study" | "Open Source";
+  status: "Live" | "Beta" | "Case Study" | "Open Source" | "In Progress" | "Done";
   featured: boolean;
   category: string;
   thumbnail: string;

@@ -81,20 +81,21 @@ export function Hero() {
         >
           <div className="absolute -inset-4 rounded-[2rem] bg-[conic-gradient(from_120deg,#06b6d4,#8b5cf6,#f43f5e,#06b6d4)] opacity-25 blur-2xl" />
           <div className="relative overflow-hidden rounded-[2rem] border border-white/20 bg-white/70 p-4 shadow-2xl backdrop-blur-2xl dark:bg-white/[0.07]">
-            <div className="aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-zinc-100 dark:bg-zinc-900">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-zinc-100 dark:bg-zinc-900">
               <Image
-                src="/images/avatar.svg"
-                alt="Abstract professional avatar illustration for Aarav Mehta"
+                src="/images/profile.jpg"
+                alt="Portrait of Muhammed Ramzin P"
                 width={640}
                 height={800}
                 priority
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-[center_24%]"
               />
+              <div className="pointer-events-none absolute inset-0 rounded-[1.5rem] bg-[linear-gradient(180deg,transparent_55%,rgba(8,8,11,0.18))]" />
             </div>
             <div className="absolute bottom-8 left-8 right-8 rounded-2xl border border-white/25 bg-white/80 p-4 shadow-soft backdrop-blur-xl dark:bg-zinc-950/75">
               <div className="flex items-center gap-3">
                 <Sparkles className="size-5 text-cyan-500" />
-                <p className="text-sm font-semibold text-zinc-950 dark:text-white">Shipping polished interfaces with measurable product outcomes.</p>
+                <p className="text-sm font-semibold text-zinc-950 dark:text-white">Building practical web products while growing deeper in backend engineering.</p>
               </div>
             </div>
           </div>

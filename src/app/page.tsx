@@ -1,5 +1,4 @@
 import { About } from "@/sections/about";
-import { Blog } from "@/sections/blog";
 import { Contact } from "@/sections/contact";
 import { ExperienceEducation } from "@/sections/experience";
 import { GithubStats } from "@/sections/github-stats";
@@ -18,10 +17,9 @@ export default function Home() {
     name: profile.name,
     jobTitle: profile.role,
     email: profile.email,
-    address: profile.location,
-    url: "https://aarav.dev",
-    sameAs: [profile.github, profile.linkedin, profile.twitter],
-    knowsAbout: ["Next.js", "TypeScript", "React", "UI/UX Design", "Full Stack Development"],
+    url: profile.linkedin,
+    sameAs: [profile.github, profile.linkedin].filter(Boolean),
+    knowsAbout: ["React.js", "Next.js", "Node.js", "Express.js", "REST APIs", "Full Stack Development"],
   };
 
   return (
@@ -38,7 +36,6 @@ export default function Home() {
         <ExperienceEducation />
         <Services />
         <Testimonials />
-        <Blog />
         <GithubStats />
         <Contact />
       </main>

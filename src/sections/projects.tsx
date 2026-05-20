@@ -64,7 +64,9 @@ function ProjectDetails({ project }: { project: Project }) {
           ))}
         </div>
         <div className="mt-7 flex flex-wrap gap-3">
-          <Button asChild><a href={project.demo} target="_blank" rel="noreferrer"><ExternalLink className="size-4" /> Live Demo</a></Button>
+          {project.demo ? (
+            <Button asChild><a href={project.demo} target="_blank" rel="noreferrer"><ExternalLink className="size-4" /> Live Demo</a></Button>
+          ) : null}
           <Button asChild variant="secondary"><a href={project.github} target="_blank" rel="noreferrer"><GitBranch className="size-4" /> GitHub</a></Button>
         </div>
       </div>
@@ -102,7 +104,11 @@ function ProjectCard({ project, large = false }: { project: Project; large?: boo
             <DialogTrigger asChild>
               <Button variant="gradient">Case Study</Button>
             </DialogTrigger>
-            <Button asChild variant="secondary"><a href={project.demo} target="_blank" rel="noreferrer">Demo</a></Button>
+            {project.demo ? (
+              <Button asChild variant="secondary"><a href={project.demo} target="_blank" rel="noreferrer">Demo</a></Button>
+            ) : (
+              <Button asChild variant="secondary"><a href={project.github} target="_blank" rel="noreferrer">Source</a></Button>
+            )}
           </div>
         </div>
       </Card>
@@ -132,8 +138,8 @@ export function Projects() {
     <Section
       id="projects"
       eyebrow="Projects"
-      title="Detailed product builds with architecture, tradeoffs, and outcomes."
-      description="Recruiters and clients can inspect the thinking behind each project: the interface, stack, challenges, performance work, and deployment path."
+      title="Practical web projects with real learning behind the interface."
+      description="Each project shows the stack, implementation thinking, challenges, and where I am growing across frontend, backend, APIs, and full-stack architecture."
     >
       <div className="mb-8 grid gap-4 lg:grid-cols-[1fr_auto]">
         <div className="relative">

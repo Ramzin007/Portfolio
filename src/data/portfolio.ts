@@ -1,16 +1,14 @@
 import {
   Blocks,
-  Bot,
   BrainCircuit,
   Braces,
   Cloud,
   Code2,
   Database,
   GitBranch,
-  Globe2,
   GraduationCap,
-  Layers3,
-  PenTool,
+  Handshake,
+  Laptop,
   Rocket,
   ServerCog,
   ShieldCheck,
@@ -28,18 +26,18 @@ import type {
 } from "@/types/portfolio";
 
 export const profile = {
-  name: "Aarav Mehta",
-  role: "Frontend Engineer & Product-Minded Full Stack Developer",
-  location: "Bengaluru, India",
-  email: "hello@aarav.dev",
-  phone: "+91 98765 43210",
-  availability: "Available for freelance and product teams",
+  name: "Muhammed Ramzin P",
+  role: "BTech IT Student • Full Stack Developer • Backend-Focused Learner",
+  location: "",
+  email: "muhammedramzinp0@gmail.com",
+  phone: "+91 62389 88808",
+  availability: "Open to internships and freelance projects",
   tagline:
-    "I design and ship fast, accessible web products that turn complex workflows into calm, delightful interfaces.",
-  resumeUrl: "/resume.txt",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
-  twitter: "https://x.com",
+    "Passionate developer building full-stack web projects while growing deeper in backend engineering, APIs, and scalable systems.",
+  resumeUrl: "/resume.pdf",
+  github: "https://github.com/Ramzin007",
+  linkedin: "https://www.linkedin.com/in/muhammedramzinp/",
+  twitter: "",
 };
 
 export const navItems: NavItem[] = [
@@ -47,35 +45,34 @@ export const navItems: NavItem[] = [
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "Services", href: "#services" },
-  { label: "Blog", href: "#blog" },
+  { label: "Focus", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const counters = [
-  { label: "Projects completed", value: 38, suffix: "+" },
-  { label: "Technologies learned", value: 42, suffix: "" },
-  { label: "GitHub commits", value: 1280, suffix: "+" },
-  { label: "Certifications", value: 9, suffix: "" },
+  { label: "Projects completed", value: 15, suffix: "+" },
+  { label: "Technologies learned", value: 12, suffix: "+" },
+  { label: "GitHub commits", value: 300, suffix: "+" },
+  { label: "Certifications", value: 4, suffix: "+" },
 ];
 
 export const highlights = [
   {
-    title: "Product engineering",
+    title: "Full-stack foundation",
     description:
-      "Comfortable moving from discovery and wireframes to implementation, testing, analytics, and iteration.",
+      "Building real-world web applications with responsive interfaces, API integration, and practical backend concepts.",
     icon: Rocket,
   },
   {
-    title: "Interface systems",
+    title: "Backend-focused growth",
     description:
-      "Builds scalable component libraries, tokens, and interaction patterns that keep teams moving quickly.",
-    icon: Layers3,
+      "Currently moving from frontend-heavy development into backend systems, API architecture, databases, and system design fundamentals.",
+    icon: ServerCog,
   },
   {
-    title: "Performance craft",
+    title: "Clean engineering habits",
     description:
-      "Obsesses over Core Web Vitals, perceived speed, accessible motion, and progressive enhancement.",
+      "Focused on reusable components, maintainable project structure, responsive UI, and products that are usable in real contexts.",
     icon: ShieldCheck,
   },
 ];
@@ -85,366 +82,419 @@ export const skillCategories: SkillCategory[] = [
     category: "Frontend",
     icon: Code2,
     skills: [
-      { name: "React / Next.js", level: 94, experience: "Advanced" },
-      { name: "TypeScript", level: 90, experience: "Advanced" },
-      { name: "Tailwind CSS", level: 92, experience: "Advanced" },
-      { name: "Framer Motion", level: 82, experience: "Strong" },
+      { name: "React.js / Next.js", level: 82, experience: "Project-based" },
+      { name: "Tailwind CSS", level: 84, experience: "Strong" },
+      { name: "Responsive UI", level: 86, experience: "Strong" },
+      { name: "API Integration", level: 78, experience: "Growing" },
     ],
   },
   {
     category: "Backend",
     icon: ServerCog,
     skills: [
-      { name: "Node.js", level: 84, experience: "Strong" },
-      { name: "REST APIs", level: 88, experience: "Advanced" },
-      { name: "Auth / RBAC", level: 78, experience: "Strong" },
-      { name: "Webhooks", level: 75, experience: "Strong" },
+      { name: "Node.js / Express.js", level: 72, experience: "Learning" },
+      { name: "REST API Development", level: 74, experience: "Growing" },
+      { name: "Authentication Concepts", level: 64, experience: "Learning" },
+      { name: "Backend Architecture", level: 60, experience: "Learning" },
     ],
   },
   {
     category: "Database",
     icon: Database,
     skills: [
-      { name: "PostgreSQL", level: 82, experience: "Strong" },
-      { name: "MongoDB", level: 76, experience: "Strong" },
-      { name: "Prisma", level: 80, experience: "Strong" },
-      { name: "Redis", level: 68, experience: "Working" },
+      { name: "MongoDB", level: 58, experience: "Learning" },
+      { name: "PostgreSQL", level: 54, experience: "Learning" },
+      { name: "SQL", level: 56, experience: "Learning" },
+      { name: "Schema Design Basics", level: 60, experience: "Basics" },
     ],
   },
   {
-    category: "DevOps",
+    category: "Platforms",
     icon: Cloud,
     skills: [
-      { name: "Vercel", level: 90, experience: "Advanced" },
-      { name: "Docker", level: 70, experience: "Working" },
-      { name: "CI/CD", level: 78, experience: "Strong" },
-      { name: "Observability", level: 72, experience: "Working" },
+      { name: "Vercel", level: 78, experience: "Project-based" },
+      { name: "Render", level: 52, experience: "Learning" },
+      { name: "Supabase", level: 45, experience: "Exploring" },
+      { name: "Firebase", level: 48, experience: "Basic" },
     ],
   },
   {
     category: "Tools",
     icon: Wrench,
     skills: [
-      { name: "Figma", level: 86, experience: "Strong" },
-      { name: "Git / GitHub", level: 91, experience: "Advanced" },
-      { name: "Linear", level: 78, experience: "Strong" },
-      { name: "Playwright", level: 73, experience: "Working" },
+      { name: "Git / GitHub", level: 82, experience: "Strong" },
+      { name: "Postman", level: 76, experience: "Project-based" },
+      { name: "VS Code", level: 86, experience: "Daily" },
+      { name: "Chrome DevTools", level: 72, experience: "Growing" },
     ],
   },
   {
     category: "Languages",
     icon: Braces,
     skills: [
-      { name: "JavaScript", level: 93, experience: "Advanced" },
-      { name: "TypeScript", level: 90, experience: "Advanced" },
-      { name: "Python", level: 68, experience: "Working" },
-      { name: "SQL", level: 76, experience: "Strong" },
+      { name: "JavaScript", level: 82, experience: "Strong" },
+      { name: "C / C++", level: 70, experience: "Academic" },
+      { name: "Python", level: 52, experience: "Learning" },
+      { name: "HTML / CSS", level: 88, experience: "Strong" },
     ],
   },
 ];
 
 export const projects: Project[] = [
   {
-    id: "atlas-crm",
-    title: "Atlas CRM Command Center",
+    id: "bloodlink",
+    title: "BloodLink",
+    status: "In Progress",
+    featured: true,
+    category: "Full Stack",
+    thumbnail: "/images/project-bloodlink.svg",
+    description:
+      "A blood donation and donor management platform designed to connect donors and recipients efficiently during emergencies.",
+    tech: ["React.js", "JavaScript", "Tailwind CSS", "Express.js", "MongoDB", "REST APIs"],
+    tags: ["Healthcare", "Donor Management", "Full Stack"],
+    features: [
+      "Responsive donor and recipient workflows",
+      "Organized donor data management concepts",
+      "Emergency-focused search and access patterns",
+      "Backend integration planned around REST APIs",
+    ],
+    challenges:
+      "Designing a clear information flow for emergency use cases while keeping the interface simple and accessible.",
+    architecture:
+      "React frontend with planned Node.js and Express API integration, MongoDB persistence, and modular full-stack project structure.",
+    performance:
+      "Mobile-first layout, reusable UI components, and lightweight client-side interactions for fast browsing.",
+    github: "https://github.com/Ramzin007/BloodLink",
+    demo: "",
+    screenshots: ["/images/project-bloodlink.svg", "/images/project-student.svg"],
+  },
+  {
+    id: "movie-library",
+    title: "Movie Library Website",
+    status: "In Progress",
+    featured: true,
+    category: "Frontend",
+    thumbnail: "/images/project-movie.svg",
+    description:
+      "A movie discovery platform using TMDB API for browsing, searching, and exploring movies through a responsive interface.",
+    tech: ["React.js", "Next.js", "JavaScript", "Tailwind CSS", "TMDB API", "REST APIs"],
+    tags: ["API Integration", "Search", "Responsive UI"],
+    features: [
+      "Dynamic movie search and discovery",
+      "TMDB API integration",
+      "Reusable card and listing components",
+      "Responsive content-heavy layouts",
+    ],
+    challenges:
+      "Handling dynamic API data in a way that stays easy to scan across mobile and desktop viewports.",
+    architecture:
+      "Component-based React/Next.js frontend with reusable movie cards, search states, and API data handling.",
+    performance:
+      "Optimized layout structure, lean API-driven rendering, and responsive image/card presentation.",
+    github: "https://github.com/Ramzin007/Movie-Library",
+    demo: "",
+    screenshots: ["/images/project-movie.svg", "/images/project-blog.svg"],
+  },
+  {
+    id: "hack-europa",
+    title: "Hack Europa Official Website",
     status: "Live",
     featured: true,
-    category: "SaaS",
-    thumbnail: "/images/project-atlas.svg",
+    category: "Event Website",
+    thumbnail: "/images/project-hackeuropa.svg",
     description:
-      "A revenue workspace for founders to track pipeline health, notes, follow-ups, and AI-scored account risk.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Framer Motion"],
-    tags: ["Dashboard", "B2B", "Analytics"],
+      "An official event website for Hack Europa focused on event information, participant engagement, and a modern hackathon experience.",
+    tech: ["React.js", "Next.js", "JavaScript", "Tailwind CSS", "Responsive Design", "GitHub"],
+    tags: ["Hackathon", "Live Site", "Event"],
     features: [
-      "Command palette-driven account search",
-      "Pipeline kanban with keyboard shortcuts",
-      "Role-based analytics views",
-      "Optimistic updates and activity feed",
+      "Modern event landing experience",
+      "Organized event information structure",
+      "Responsive participant-focused sections",
+      "Production deployment on Vercel",
     ],
     challenges:
-      "Balancing dense operational data with a calm interface that sales teams can scan repeatedly.",
+      "Presenting event information clearly while maintaining a polished visual experience for participants.",
     architecture:
-      "App Router route groups, server actions for mutations, Prisma data layer, and component-level streaming boundaries.",
+      "Component-based frontend with reusable sections, structured content, and deployment-ready Next.js/Vercel workflow.",
     performance:
-      "Reduced dashboard interaction latency with memoized filters, partial hydration, and image placeholders.",
-    github: "https://github.com",
-    demo: "https://vercel.com",
-    screenshots: ["/images/project-atlas.svg", "/images/project-pulse.svg"],
+      "Static-friendly page structure, optimized section hierarchy, and responsive Tailwind styling.",
+    github: "https://github.com/Ramzin007/hack-europa-2.0",
+    demo: "https://hack-europa-2-0.vercel.app/",
+    screenshots: ["/images/project-hackeuropa.svg", "/images/project-movie.svg"],
   },
   {
-    id: "pulse-ai",
-    title: "Pulse AI Support Copilot",
-    status: "Beta",
-    featured: true,
-    category: "AI",
-    thumbnail: "/images/project-pulse.svg",
-    description:
-      "A support triage product that clusters tickets, drafts replies, and highlights escalation risk for CX leads.",
-    tech: ["React", "Node.js", "OpenAI", "Redis", "Tailwind"],
-    tags: ["AI", "Support", "Realtime"],
-    features: [
-      "Semantic ticket clustering",
-      "Human-in-the-loop approval workflow",
-      "Realtime SLA risk monitor",
-      "Audit trail for AI suggestions",
-    ],
-    challenges:
-      "Keeping generated content transparent and reviewable while preserving agent speed.",
-    architecture:
-      "Event-driven ingestion pipeline, queue-backed scoring jobs, and a review-first React workspace.",
-    performance:
-      "Lazy-loaded conversation panes and virtualized long ticket lists kept time-to-interaction under budget.",
-    github: "https://github.com",
-    demo: "https://vercel.com",
-    screenshots: ["/images/project-pulse.svg", "/images/project-nova.svg"],
-  },
-  {
-    id: "nova-commerce",
-    title: "Nova Commerce Studio",
-    status: "Case Study",
-    featured: true,
-    category: "Ecommerce",
-    thumbnail: "/images/project-nova.svg",
-    description:
-      "A headless storefront builder for boutique brands with reusable merchandising blocks and edge-ready pages.",
-    tech: ["Next.js", "Shopify", "Stripe", "Zod", "Vercel"],
-    tags: ["Commerce", "CMS", "Payments"],
-    features: [
-      "CMS-ready page sections",
-      "Variant-aware product gallery",
-      "Checkout handoff with analytics",
-      "Editorial landing page builder",
-    ],
-    challenges:
-      "Designing a premium storefront system flexible enough for campaigns without making every page feel generic.",
-    architecture:
-      "Composable content schema, server-rendered product routes, and client islands for cart interactions.",
-    performance:
-      "Edge caching, responsive images, and minimal client state delivered consistently fast product pages.",
-    github: "https://github.com",
-    demo: "https://vercel.com",
-    screenshots: ["/images/project-nova.svg", "/images/project-atlas.svg"],
-  },
-  {
-    id: "open-kit",
-    title: "OpenKit Design System",
-    status: "Open Source",
+    id: "student-portal",
+    title: "Student Portal",
+    status: "Done",
     featured: false,
-    category: "Open Source",
-    thumbnail: "/images/project-openkit.svg",
+    category: "Dashboard",
+    thumbnail: "/images/project-student.svg",
     description:
-      "Accessible React primitives, tokens, and docs for shipping polished internal tools quickly.",
-    tech: ["React", "Storybook", "Radix UI", "Tailwind", "Vitest"],
-    tags: ["Design System", "A11y", "Docs"],
+      "A student management platform concept for centralizing academic and student-related information through responsive dashboards.",
+    tech: ["React.js", "JavaScript", "Tailwind CSS", "Express.js", "SQL", "REST APIs"],
+    tags: ["Dashboard", "Education", "Student Data"],
     features: [
-      "Tokenized theming",
-      "Accessible primitives",
-      "Component recipes",
-      "Visual regression workflow",
+      "Dashboard-style student information views",
+      "Responsive academic data layouts",
+      "Structured full-stack integration concepts",
+      "SQL-backed data handling planned",
     ],
     challenges:
-      "Creating defaults that feel refined while staying adaptable across product surfaces.",
+      "Designing a dashboard structure that can scale as more student modules and data views are added.",
     architecture:
-      "Package-based component library with typed variants, Storybook docs, and automated release notes.",
+      "React frontend with planned Node.js/Express backend, SQL data model, and REST API-based module integration.",
     performance:
-      "Tree-shakeable exports and CSS-variable theming keep consuming apps lean.",
-    github: "https://github.com",
-    demo: "https://vercel.com",
-    screenshots: ["/images/project-openkit.svg", "/images/project-atlas.svg"],
+      "Reusable dashboard components and predictable grid layouts for consistent rendering across screen sizes.",
+    github: "https://github.com/muhammedma-2006/StudentPortal",
+    demo: "",
+    screenshots: ["/images/project-student.svg", "/images/project-bloodlink.svg"],
+  },
+  {
+    id: "phishguard",
+    title: "PhishGuard",
+    status: "Done",
+    featured: false,
+    category: "Security Awareness",
+    thumbnail: "/images/project-phishguard.svg",
+    description:
+      "A cybersecurity-focused web application and Chrome extension concept for phishing awareness and unsafe link education.",
+    tech: ["React.js", "JavaScript", "Tailwind CSS", "Node.js", "REST APIs", "GitHub"],
+    tags: ["Chrome Extension", "Security", "Awareness"],
+    features: [
+      "Security-oriented user workflows",
+      "Unsafe link awareness concepts",
+      "Responsive educational interface",
+      "Chrome extension direction",
+    ],
+    challenges:
+      "Communicating phishing risk in a practical, user-friendly way without claiming advanced cybersecurity automation.",
+    architecture:
+      "React-based interface with extension-oriented flows and planned API integration for link-checking concepts.",
+    performance:
+      "Simple UI flows and focused interaction states to keep security education quick and approachable.",
+    github: "https://github.com/Ramzin007/PhishGuard",
+    demo: "",
+    screenshots: ["/images/project-phishguard.svg", "/images/project-hackeuropa.svg"],
+  },
+  {
+    id: "blog-web-app",
+    title: "Blog Web Application",
+    status: "Done",
+    featured: false,
+    category: "Content Platform",
+    thumbnail: "/images/project-blog.svg",
+    description:
+      "A modern blog platform focused on clean content presentation, reusable frontend components, and full-stack blogging concepts.",
+    tech: ["React.js", "Next.js", "JavaScript", "Tailwind CSS", "Markdown", "REST APIs"],
+    tags: ["Blog", "Content", "Full Stack"],
+    features: [
+      "Clean content presentation",
+      "Dynamic content rendering concepts",
+      "Reusable blog card components",
+      "Responsive reading experience",
+    ],
+    challenges:
+      "Designing a simple content system that can grow into a more complete full-stack blogging platform.",
+    architecture:
+      "React/Next.js frontend with structured content rendering and REST API integration concepts.",
+    performance:
+      "Focused typography, lightweight layouts, and responsive sections for comfortable reading.",
+    github: "https://github.com/Ramzin007/Blog-web-application",
+    demo: "https://blog-web-application-tazs.onrender.com/",
+    screenshots: ["/images/project-blog.svg", "/images/project-hackeuropa.svg"],
   },
 ];
 
 export const experiences: Experience[] = [
   {
-    role: "Frontend Engineering Intern",
-    company: "Northstar Labs",
-    period: "Jan 2026 - Present",
-    type: "Internship",
+    role: "Self-Directed Full-Stack Development",
+    company: "Project-Based Learning",
+    period: "2024 - Present",
+    type: "Independent",
     summary:
-      "Shipping customer-facing dashboard modules for a fintech analytics platform.",
+      "Focused on building responsive web applications while transitioning from frontend-heavy development into backend engineering and scalable system design.",
     achievements: [
-      "Improved dashboard load perception with skeletons and streaming sections.",
-      "Built accessible filters, data tables, and export flows used by analyst teams.",
-      "Partnered with design to formalize component usage guidelines.",
+      "Built projects involving REST API integration, component-based architecture, and responsive UI systems.",
+      "Explored authentication concepts, backend project structure, error handling, and database design basics.",
+      "Practiced clean engineering through BloodLink, Student Portal, Movie Library, PhishGuard, and Blog Web Application.",
     ],
-    tech: ["Next.js", "TypeScript", "TanStack Query", "Tailwind"],
+    tech: ["React.js", "Node.js", "Express.js", "Tailwind CSS", "REST APIs", "MongoDB", "SQL"],
   },
   {
-    role: "Freelance Product Developer",
-    company: "Independent",
-    period: "2024 - 2026",
-    type: "Freelance",
+    role: "Hackathon & Collaborative Development",
+    company: "CUSAT / Student Projects",
+    period: "2024 - Present",
+    type: "Collaboration",
     summary:
-      "Designed and built landing pages, booking tools, and internal apps for early-stage clients.",
+      "Contributed to hackathon-oriented development projects and collaborative web solutions under time-constrained environments.",
     achievements: [
-      "Delivered five paid client projects from brief to deployment.",
-      "Set up analytics, SEO metadata, and Vercel deployment workflows.",
-      "Reduced manual client operations through API integrations and admin panels.",
+      "Developed rapid prototypes and participant-facing event interfaces.",
+      "Worked on UI implementation, feature-focused development, and team-based problem solving.",
+      "Built and deployed the Hack Europa Official Website for a real event context.",
     ],
-    tech: ["React", "Node.js", "Stripe", "Vercel"],
+    tech: ["React.js", "Next.js", "GitHub", "Vercel", "Responsive Design"],
   },
   {
-    role: "Open Source Contributor",
-    company: "Frontend Ecosystem",
-    period: "2023 - Present",
-    type: "Open Source",
+    role: "Continuous Technical Learning",
+    company: "Backend, DSA & Systems",
+    period: "2024 - Present",
+    type: "Learning",
     summary:
-      "Contributing docs, accessibility fixes, and reproduction cases to UI libraries.",
+      "Actively expanding into backend development, database systems, API architecture, DSA, and system design fundamentals.",
     achievements: [
-      "Submitted fixes for focus management and responsive layout defects.",
-      "Authored issue reproductions that accelerated maintainer triage.",
-      "Mentored peers through project setup and pull request review.",
+      "Completed Full Stack Open and continued strengthening modern full-stack fundamentals.",
+      "Participated in AI/computational thinking and AR/VR workshops to broaden technical exposure.",
+      "Improving through hands-on projects, debugging, deployment practice, and problem solving.",
     ],
-    tech: ["GitHub", "Radix UI", "Storybook", "Playwright"],
+    tech: ["Backend Systems", "API Architecture", "Database Design", "DSA", "System Design"],
   },
 ];
 
 export const education = {
-  degree: "B.Tech in Computer Science",
-  college: "Ramaiah Institute of Technology",
-  period: "2022 - 2026",
-  cgpa: "8.7 / 10",
+  degree: "Bachelor of Technology (BTech) in Information Technology",
+  college: "CUSAT School of Engineering, Cochin University of Science and Technology",
+  period: "2024 - 2028",
+  cgpa: "8.94 / 10",
   coursework: [
-    "Data Structures",
-    "Database Systems",
+    "Data Structures & Algorithms",
+    "Database Management Systems",
+    "Web Technologies",
+    "Object-Oriented Programming",
+    "Software Engineering",
     "Computer Networks",
-    "Human Computer Interaction",
-    "Distributed Systems",
+    "Operating Systems",
+    "System Design Fundamentals",
   ],
   achievements: [
-    "Winner, campus product sprint 2025",
-    "Top 5, regional hackathon 2024",
-    "Design lead for developer club",
+    "Hack Europa 2.0 participant",
+    "Full Stack Open Certificate of Completion",
+    "AI and Computational Thinking workshop participant",
+    "Augmented and Virtual Reality Workshop participant",
   ],
   icon: GraduationCap,
 };
 
 export const certifications: Certification[] = [
   {
-    title: "Frontend Developer Professional",
-    issuer: "Meta",
-    date: "2025",
-    credential: "https://example.com",
+    title: "Full Stack Open - Certificate of Completion",
+    issuer: "University of Helsinki & Houston Inc.",
+    date: "2026",
+    credential: "/certificates/fullstackopen.pdf",
   },
   {
-    title: "AWS Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    date: "2025",
-    credential: "https://example.com",
+    title: "Hack Europa 2.0 - Participation Certificate",
+    issuer: "Students Association of Information Technology (SAIT), CUSAT",
+    date: "2026",
+    credential: "/certificates/hackeuropa-certificate.pdf",
   },
   {
-    title: "User Experience Design",
-    issuer: "Google",
-    date: "2024",
-    credential: "https://example.com",
+    title: "AI and Computational Thinking Essentials: MATLAB and Simulink Hands-on",
+    issuer: "MathWorks in collaboration with IEEE CUSAT SB",
+    date: "2025",
+    credential: "/certificates/mathlab-certificate.pdf",
+  },
+  {
+    title: "Augmented and Virtual Reality Workshop",
+    issuer: "YISL with IUSSTF and STEAM Varsity",
+    date: "2026",
+    credential: "/certificates/augmented-virtual-reality-workshop.jpg",
   },
 ];
 
 export const services = [
   {
-    title: "Web Development",
-    price: "From $900",
-    icon: Globe2,
-    description: "Responsive marketing sites and product interfaces that feel sharp on every device.",
-    features: ["Next.js builds", "SEO setup", "Analytics hooks", "CMS-ready sections"],
-  },
-  {
-    title: "Full Stack Apps",
-    price: "From $2,500",
+    title: "Full-Stack Development",
+    price: "Hands-on",
     icon: Blocks,
-    description: "Production-ready dashboards, portals, and workflow tools with strong data models.",
-    features: ["Auth flows", "API routes", "Database schema", "Deployment pipeline"],
+    description:
+      "Developing full-stack applications through practical project building, frontend/backend integration, and deployment practice.",
+    features: ["React interfaces", "Node/Express APIs", "Database basics", "Project structure"],
   },
   {
-    title: "UI/UX Design",
-    price: "From $700",
-    icon: PenTool,
-    description: "Polished product design, prototypes, and design systems for fast-moving teams.",
-    features: ["Wireframes", "Component systems", "Interaction design", "Usability review"],
+    title: "Backend Systems",
+    price: "Learning Focus",
+    icon: ServerCog,
+    description:
+      "Strengthening backend fundamentals around APIs, authentication concepts, middleware, error handling, and scalable application thinking.",
+    features: ["REST APIs", "Auth concepts", "Error handling", "Debugging"],
   },
   {
-    title: "AI/API Consulting",
-    price: "Custom",
-    icon: Bot,
-    description: "Practical AI integrations, automations, and API architecture for real workflows.",
-    features: ["Prompt flows", "Webhook design", "Observability", "Human review UX"],
+    title: "API Architecture",
+    price: "Growing",
+    icon: BrainCircuit,
+    description:
+      "Exploring clean API design, dynamic data handling, third-party integrations, and frontend-to-backend communication patterns.",
+    features: ["API routing", "Postman testing", "Data fetching", "JSON workflows"],
+  },
+  {
+    title: "Responsive UI Engineering",
+    price: "Strong Base",
+    icon: Laptop,
+    description:
+      "Creating mobile-first, accessible, and performance-conscious interfaces with reusable React components and Tailwind CSS.",
+    features: ["Responsive layouts", "Reusable UI", "Theme support", "Basic accessibility"],
+  },
+  {
+    title: "Technical Prototyping",
+    price: "Fast Builds",
+    icon: Sparkles,
+    description:
+      "Rapid MVP and hackathon-style development for ideas, student projects, and practical web application concepts.",
+    features: ["MVP screens", "Hackathon workflows", "Feature demos", "Vercel deployment"],
   },
 ];
 
 export const testimonials = [
   {
     quote:
-      "Aarav turned a fuzzy product idea into a polished dashboard our team could actually use every morning.",
-    name: "Maya Iyer",
-    company: "Founder, Finpilot",
+      "Building real-world web projects while transitioning into backend engineering and scalable application thinking.",
+    name: "Project-Based Growth",
+    company: "Full-stack development",
     rating: 5,
   },
   {
     quote:
-      "The interface quality was noticeably above what we normally get from freelance builds. Fast, thoughtful, and well documented.",
-    name: "Daniel Stone",
-    company: "Product Lead, Northstar",
+      "Comfortable collaborating in hackathons and team-based development environments where quick decisions matter.",
+    name: "Collaborative Development",
+    company: "Hackathons and student teams",
     rating: 5,
   },
   {
     quote:
-      "He cared about accessibility, performance, and edge cases without making the process feel heavy.",
-    name: "Priya Shah",
-    company: "Design Manager, Studio Nine",
+      "Focused on clean UI architecture, responsive design, reusable components, and practical product usability.",
+    name: "Interface Craft",
+    company: "React and Tailwind projects",
+    rating: 5,
+  },
+  {
+    quote:
+      "Continuously improving backend, APIs, DSA, system design fundamentals, and modern engineering practices.",
+    name: "Continuous Learning",
+    company: "Backend and systems",
     rating: 5,
   },
 ];
 
-export const blogPosts: BlogPost[] = [
-  {
-    title: "Designing dashboards that teams can read under pressure",
-    excerpt:
-      "A practical framework for hierarchy, defaults, empty states, and interaction density in SaaS dashboards.",
-    category: "Product Design",
-    date: "2026-04-12",
-    tags: ["Design", "SaaS", "Dashboards"],
-    content:
-      "Great dashboards reduce decision friction. They emphasize the next action, make anomalies obvious, and avoid burying useful context behind decoration.",
-  },
-  {
-    title: "What I measure before shipping a portfolio project",
-    excerpt:
-      "The performance, accessibility, SEO, and interaction checks that keep personal projects credible.",
-    category: "Engineering",
-    date: "2026-03-19",
-    tags: ["Performance", "A11y", "Next.js"],
-    content:
-      "Portfolio projects are tiny product surfaces. Recruiters and clients notice polish, but they also notice broken keyboard focus and slow pages.",
-  },
-  {
-    title: "Building an AI feature without hiding the human workflow",
-    excerpt:
-      "A pattern for AI suggestions that preserve trust: preview, provenance, approval, and undo.",
-    category: "AI",
-    date: "2026-02-28",
-    tags: ["AI", "UX", "Workflow"],
-    content:
-      "The strongest AI interfaces expose confidence, context, and control. The user should always know what changed and why.",
-  },
-];
+export const blogPosts: BlogPost[] = [];
 
 export const githubStats = {
-  repos: 42,
-  stars: 318,
-  contributions: 1280,
-  streak: 146,
+  repos: 24,
+  stars: 12,
+  contributions: 300,
+  streak: 21,
   languages: [
-    { name: "TypeScript", value: 48, color: "bg-sky-400" },
-    { name: "JavaScript", value: 22, color: "bg-yellow-300" },
-    { name: "CSS", value: 16, color: "bg-pink-400" },
-    { name: "Python", value: 9, color: "bg-emerald-400" },
-    { name: "Other", value: 5, color: "bg-zinc-400" },
+    { name: "JavaScript", value: 46, color: "bg-yellow-300" },
+    { name: "CSS", value: 24, color: "bg-pink-400" },
+    { name: "HTML", value: 14, color: "bg-orange-400" },
+    { name: "C++", value: 9, color: "bg-sky-400" },
+    { name: "Other", value: 7, color: "bg-zinc-400" },
   ],
 };
 
 export const commandItems = [
-  { label: "Hire Me", href: "#contact", icon: Sparkles },
+  { label: "Contact Me", href: "#contact", icon: Sparkles },
   { label: "View Projects", href: "#projects", icon: SquareTerminal },
   { label: "Download Resume", href: profile.resumeUrl, icon: GitBranch },
-  { label: "Read Blog", href: "#blog", icon: BrainCircuit },
+  { label: "Open GitHub", href: profile.github, icon: GitBranch },
+  { label: "Connect on LinkedIn", href: profile.linkedin, icon: Handshake },
 ];
