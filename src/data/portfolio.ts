@@ -478,10 +478,10 @@ export const testimonials = [
 export const blogPosts: BlogPost[] = [];
 
 export const githubStats = {
-  repos: 24,
-  stars: 12,
-  contributions: 300,
-  streak: 21,
+  repos: 15,
+  stars: 6,
+  contributions: 107,
+  streak: 1,
   languages: [
     { name: "JavaScript", value: 46, color: "bg-yellow-300" },
     { name: "CSS", value: 24, color: "bg-pink-400" },
