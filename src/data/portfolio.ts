@@ -291,7 +291,7 @@ export const projects: Project[] = [
     status: "Done",
     featured: false,
     category: "Content Platform",
-    thumbnail: "/images/project-blog.svg",
+    thumbnail: "/images/projects/blog-web-app/blog-home.png",
     description:
       "A modern blog platform focused on clean content presentation, reusable frontend components, and full-stack blogging concepts.",
     tech: ["React.js", "Next.js", "JavaScript", "Tailwind CSS", "Markdown", "REST APIs"],
@@ -310,7 +310,11 @@ export const projects: Project[] = [
       "Focused typography, lightweight layouts, and responsive sections for comfortable reading.",
     github: "https://github.com/Ramzin007/Blog-web-application",
     demo: "https://blog-web-application-tazs.onrender.com/",
-    screenshots: ["/images/project-blog.svg", "/images/project-hackeuropa.svg"],
+    screenshots: [
+      "/images/projects/blog-web-app/blog-home.png",
+      "/images/projects/blog-web-app/blog-search.png",
+      "/images/projects/blog-web-app/blog-about.png",
+    ],
   },
 ];
 
