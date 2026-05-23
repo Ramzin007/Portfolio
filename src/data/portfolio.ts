@@ -45,6 +45,7 @@ export const navItems: NavItem[] = [
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
+  { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -52,7 +53,7 @@ export const counters = [
   { label: "Projects completed", value: 15, suffix: "+" },
   { label: "Technologies learned", value: 12, suffix: "+" },
   { label: "GitHub commits", value: 300, suffix: "+" },
-  { label: "Certifications", value: 4, suffix: "+" },
+  { label: "Certifications", value: 6, suffix: "+" },
 ];
 
 export const highlights = [
@@ -397,6 +398,26 @@ export const education = {
 
 export const certifications: Certification[] = [
   {
+    title: "Computer Vision and Image Processing - Fundamentals and Applications",
+    issuer: "NPTEL / IIT Guwahati",
+    date: "2026",
+    duration: "Jan-Apr 2026",
+    courseLength: "12 weeks",
+    score: "51%",
+    credits: "4 recommended",
+    credential: "/certificates/nptel-computer-vision.pdf",
+  },
+  {
+    title: "Machine Learning for Engineering and Science Applications",
+    issuer: "NPTEL / IIT Madras",
+    date: "2026",
+    duration: "Jan-Apr 2026",
+    courseLength: "12 weeks",
+    score: "58%",
+    credits: "4 recommended",
+    credential: "/certificates/nptel-machine-learning.pdf",
+  },
+  {
     title: "Full Stack Open - Certificate of Completion",
     issuer: "University of Helsinki & Houston Inc.",
     date: "2026",
@@ -409,16 +430,16 @@ export const certifications: Certification[] = [
     credential: "/certificates/hackeuropa-certificate.pdf",
   },
   {
-    title: "AI and Computational Thinking Essentials: MATLAB and Simulink Hands-on",
-    issuer: "MathWorks in collaboration with IEEE CUSAT SB",
-    date: "2025",
-    credential: "/certificates/mathlab-certificate.pdf",
-  },
-  {
     title: "Augmented and Virtual Reality Workshop",
     issuer: "YISL with IUSSTF and STEAM Varsity",
     date: "2026",
     credential: "/certificates/augmented-virtual-reality-workshop.jpg",
+  },
+  {
+    title: "AI and Computational Thinking Essentials: MATLAB and Simulink Hands-on",
+    issuer: "MathWorks in collaboration with IEEE CUSAT SB",
+    date: "2025",
+    credential: "/certificates/mathlab-certificate.pdf",
   },
 ];
 

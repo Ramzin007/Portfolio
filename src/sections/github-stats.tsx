@@ -29,6 +29,26 @@ interface LiveStats {
   languages: { name: string; value: number; color: string }[];
 }
 
+type GithubUserResponse = {
+  public_repos?: number;
+};
+
+type GithubRepoResponse = {
+  stargazers_count?: number;
+  language?: string | null;
+};
+
+type GithubContributionDay = {
+  date: string;
+  count: number;
+  level: number;
+};
+
+type GithubContributionResponse = {
+  total?: Record<string, number>;
+  contributions?: GithubContributionDay[];
+};
+
 export function GithubStats() {
   const [stats, setStats] = useState<LiveStats>(githubStats);
   const [heatmapDays, setHeatmapDays] = useState<{ date: string; count: number; level: number }[]>(mockHeatmapDays);
@@ -40,17 +60,17 @@ export function GithubStats() {
         // Fetch basic profile info (includes repos count)
         const userRes = await fetch("https://api.github.com/users/Ramzin007");
         if (!userRes.ok) throw new Error("Failed to fetch profile");
-        const userData = await userRes.json();
+        const userData = (await userRes.json()) as GithubUserResponse;
 
         // Fetch repos to calculate stars and languages
         const reposRes = await fetch("https://api.github.com/users/Ramzin007/repos?per_page=100");
         if (!reposRes.ok) throw new Error("Failed to fetch repositories");
-        const reposData = await reposRes.json();
+        const reposData = (await reposRes.json()) as GithubRepoResponse[];
 
         let totalStars = 0;
         const languageCounts: { [key: string]: number } = {};
 
-        reposData.forEach((repo: any) => {
+        reposData.forEach((repo) => {
           totalStars += repo.stargazers_count || 0;
           if (repo.language) {
             languageCounts[repo.language] = (languageCounts[repo.language] || 0) + 1;
@@ -91,27 +111,27 @@ export function GithubStats() {
         try {
           const calendarRes = await fetch("https://github-contributions-api.jogruber.de/v4/Ramzin007");
           if (calendarRes.ok) {
-            const calendarData = await calendarRes.json();
+            const calendarData = (await calendarRes.json()) as GithubContributionResponse;
 
             // Calculate total contributions
             if (calendarData.total) {
               liveContributionsCount = Object.values(calendarData.total).reduce(
-                (sum: number, val: any) => sum + val,
+                (sum, val) => sum + val,
                 0
               );
             }
 
             // Calculate current streak
             if (calendarData.contributions) {
-              const sorted = calendarData.contributions.sort((a: any, b: any) =>
+              const sorted = [...calendarData.contributions].sort((a, b) =>
                 a.date.localeCompare(b.date)
               );
               const todayStr = new Date().toISOString().split("T")[0];
-              const filtered = sorted.filter((c: any) => c.date <= todayStr);
+              const filtered = sorted.filter((contribution) => contribution.date <= todayStr);
 
               let currentStreak = 0;
               const checkDate = new Date(todayStr);
-              const contribMap = new Map<string, number>(filtered.map((c: any) => [c.date as string, c.count as number]));
+              const contribMap = new Map<string, number>(filtered.map((contribution) => [contribution.date, contribution.count]));
 
               if ((contribMap.get(todayStr) || 0) > 0) {
                 currentStreak = 1;

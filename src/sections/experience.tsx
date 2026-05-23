@@ -82,18 +82,35 @@ export function ExperienceEducation() {
 
       <Section id="certifications" eyebrow="Certifications" title="Certificates and workshops that support my full-stack learning path.">
         <div className="grid gap-5 md:grid-cols-3">
-          {certifications.map((certification, index) => (
-            <Reveal key={certification.title} delay={index * 0.06}>
-              <Card className="h-full p-6 transition hover:-translate-y-1 hover:shadow-2xl">
-                <Badge>{certification.date}</Badge>
-                <h3 className="mt-5 text-xl font-semibold text-zinc-950 dark:text-white">{certification.title}</h3>
-                <p className="mt-2 text-zinc-600 dark:text-zinc-300">{certification.issuer}</p>
-                <Button asChild variant="secondary" className="mt-6">
-                  <a href={certification.credential} target="_blank" rel="noreferrer">Verify Credential</a>
-                </Button>
-              </Card>
-            </Reveal>
-          ))}
+          {certifications.map((certification, index) => {
+            const details = [
+              certification.duration,
+              certification.courseLength,
+              certification.score ? `Score ${certification.score}` : null,
+              certification.credits ? `Credits ${certification.credits}` : null,
+            ].filter(Boolean);
+
+            return (
+              <Reveal key={certification.title} delay={index * 0.06}>
+                <Card className="h-full p-6 transition hover:-translate-y-1 hover:shadow-2xl">
+                  <Badge>{certification.date}</Badge>
+                  <h3 className="mt-5 text-xl font-semibold text-zinc-950 dark:text-white">{certification.title}</h3>
+                  <p className="mt-2 text-zinc-600 dark:text-zinc-300">{certification.issuer}</p>
+                  {details.length ? (
+                    <p className="mt-3 text-sm leading-6 text-zinc-500 dark:text-zinc-400">
+                      {details.join(" | ")}
+                    </p>
+                  ) : null}
+
+                  <Button asChild variant="secondary" className="mt-6">
+                    <a href={certification.credential} target="_blank" rel="noreferrer" aria-label={`View ${certification.title} certificate`}>
+                      View Certificate
+                    </a>
+                  </Button>
+                </Card>
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
     </>

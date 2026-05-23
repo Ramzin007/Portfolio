@@ -49,6 +49,10 @@ export type Certification = {
   issuer: string;
   date: string;
   credential: string;
+  duration?: string;
+  courseLength?: string;
+  score?: string;
+  credits?: string;
 };
 
 export type BlogPost = {
