@@ -46,9 +46,9 @@ export const navItems: NavItem[] = [
 ];
 
 export const counters = [
-  { label: "Projects completed", value: 15, suffix: "+" },
-  { label: "Technologies learned", value: 12, suffix: "+" },
-  { label: "GitHub commits", value: 300, suffix: "+" },
+  { label: "Projects completed", value: 10, suffix: "+" },
+  { label: "Technologies learned", value: 10, suffix: "+" },
+  { label: "GitHub commits", value: 150, suffix: "+" },
   { label: "Certifications", value: 6, suffix: "+" },
 ];
 
