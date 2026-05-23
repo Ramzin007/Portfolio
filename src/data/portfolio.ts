@@ -1,6 +1,4 @@
 import {
-  Blocks,
-  BrainCircuit,
   Braces,
   Cloud,
   Code2,
@@ -8,7 +6,6 @@ import {
   GitBranch,
   GraduationCap,
   Handshake,
-  Laptop,
   Rocket,
   ServerCog,
   ShieldCheck,
@@ -17,7 +14,6 @@ import {
   Wrench,
 } from "lucide-react";
 import type {
-  BlogPost,
   Certification,
   Experience,
   NavItem,
@@ -442,82 +438,6 @@ export const certifications: Certification[] = [
     credential: "/certificates/mathlab-certificate.pdf",
   },
 ];
-
-export const services = [
-  {
-    title: "Full-Stack Development",
-    price: "Hands-on",
-    icon: Blocks,
-    description:
-      "Developing full-stack applications through practical project building, frontend/backend integration, and deployment practice.",
-    features: ["React interfaces", "Node/Express APIs", "Database basics", "Project structure"],
-  },
-  {
-    title: "Backend Systems",
-    price: "Learning Focus",
-    icon: ServerCog,
-    description:
-      "Strengthening backend fundamentals around APIs, authentication concepts, middleware, error handling, and scalable application thinking.",
-    features: ["REST APIs", "Auth concepts", "Error handling", "Debugging"],
-  },
-  {
-    title: "API Architecture",
-    price: "Growing",
-    icon: BrainCircuit,
-    description:
-      "Exploring clean API design, dynamic data handling, third-party integrations, and frontend-to-backend communication patterns.",
-    features: ["API routing", "Postman testing", "Data fetching", "JSON workflows"],
-  },
-  {
-    title: "Responsive UI Engineering",
-    price: "Strong Base",
-    icon: Laptop,
-    description:
-      "Creating mobile-first, accessible, and performance-conscious interfaces with reusable React components and Tailwind CSS.",
-    features: ["Responsive layouts", "Reusable UI", "Theme support", "Basic accessibility"],
-  },
-  {
-    title: "Technical Prototyping",
-    price: "Fast Builds",
-    icon: Sparkles,
-    description:
-      "Rapid MVP and hackathon-style development for ideas, student projects, and practical web application concepts.",
-    features: ["MVP screens", "Hackathon workflows", "Feature demos", "Vercel deployment"],
-  },
-];
-
-export const testimonials = [
-  {
-    quote:
-      "Building real-world web projects while transitioning into backend engineering and scalable application thinking.",
-    name: "Project-Based Growth",
-    company: "Full-stack development",
-    rating: 5,
-  },
-  {
-    quote:
-      "Comfortable collaborating in hackathons and team-based development environments where quick decisions matter.",
-    name: "Collaborative Development",
-    company: "Hackathons and student teams",
-    rating: 5,
-  },
-  {
-    quote:
-      "Focused on clean UI architecture, responsive design, reusable components, and practical product usability.",
-    name: "Interface Craft",
-    company: "React and Tailwind projects",
-    rating: 5,
-  },
-  {
-    quote:
-      "Continuously improving backend, APIs, DSA, system design fundamentals, and modern engineering practices.",
-    name: "Continuous Learning",
-    company: "Backend and systems",
-    rating: 5,
-  },
-];
-
-export const blogPosts: BlogPost[] = [];
 
 export const githubStats = {
   repos: 15,

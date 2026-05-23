@@ -5,6 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "@/components/shared/reveal";
 import { Section } from "@/components/shared/section";
 
+const numberFormatter = new Intl.NumberFormat("en-US");
+
 export function About() {
   return (
     <Section
@@ -26,7 +28,7 @@ export function About() {
               {counters.map((counter) => (
                 <div key={counter.label} className="rounded-2xl border border-zinc-200/70 bg-zinc-50 p-5 dark:border-white/10 dark:bg-white/[0.05]">
                   <p className="text-3xl font-semibold text-zinc-950 dark:text-white">
-                    {counter.value.toLocaleString()}{counter.suffix}
+                    {numberFormatter.format(counter.value)}{counter.suffix}
                   </p>
                   <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{counter.label}</p>
                 </div>

@@ -54,12 +54,3 @@ export type Certification = {
   score?: string;
   credits?: string;
 };
-
-export type BlogPost = {
-  title: string;
-  excerpt: string;
-  category: string;
-  date: string;
-  tags: string[];
-  content: string;
-};

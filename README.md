@@ -4,7 +4,7 @@ A production-grade personal portfolio built with Next.js App Router, TypeScript,
 
 ## Highlights
 
-- Responsive recruiter/client-focused portfolio sections: hero, about, skills, projects, experience, education, certifications, services, testimonials, blog, GitHub stats, contact, and footer.
+- Responsive recruiter/client-focused portfolio sections: hero, about, skills, projects, experience, education, certifications, GitHub stats, contact, and footer.
 - Premium interactive UI with sticky scrollspy navigation, command palette, theme persistence, scroll progress, subtle cursor interaction, animated reveals, project case-study modals, filters, search, toast states, and accessible controls.
 - SEO and platform readiness: Open Graph image, Twitter metadata, sitemap, robots.txt, manifest, favicon, semantic layout, optimized local SVG assets, and structured person data in the page.
 - API-ready contact form with Zod validation and a Next.js route prepared for Resend, Postmark, SendGrid, or webhook delivery.
@@ -48,7 +48,7 @@ Most content lives in:
 src/data/portfolio.ts
 ```
 
-Update the profile, projects, skills, services, testimonials, blog posts, and GitHub statistics there. Replace SVGs in `public/images` with real screenshots when available.
+Update the profile, projects, skills, certifications, and GitHub statistics there. Replace project screenshots in `public/images/projects` when available.
 
 ## Contact Email Integration
 
@@ -79,6 +79,5 @@ Vercel will run `next build` automatically.
 
 ## Notes
 
-- The resume download currently points to `public/resume.txt`; replace it with a real `resume.pdf` and update `profile.resumeUrl`.
-- Blog content is modeled in data for this build, but the section is ready to migrate to MDX or a CMS.
-- The GitHub graph is a performant local visualization. Wire the GitHub API later if live stats are required.
+- The resume download points to `public/resume.pdf`; replace that file to update the downloadable resume.
+- The GitHub graph uses live fetches with portfolio-friendly fallbacks.

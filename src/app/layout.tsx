@@ -56,7 +56,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className="h-full antialiased"
     >
-      <body className="min-h-full bg-background text-foreground">
+      <body suppressHydrationWarning className="min-h-full bg-background text-foreground">
         <ThemeProvider>
           <SiteShell>{children}</SiteShell>
         </ThemeProvider>

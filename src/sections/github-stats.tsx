@@ -7,18 +7,31 @@ import { Card } from "@/components/ui/card";
 import { Reveal } from "@/components/shared/reveal";
 import { Section } from "@/components/shared/section";
 
+type GithubContributionDay = {
+  date: string;
+  count: number;
+  level: number;
+};
+
+const placeholderEndDate = "2026-05-23";
+const heatmapDateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
 const mockHeatmapDays = Array.from({ length: 84 }, (_, index) => {
-  const date = new Date();
-  date.setDate(date.getDate() - (83 - index));
+  const date = new Date(`${placeholderEndDate}T00:00:00.000Z`);
+  date.setUTCDate(date.getUTCDate() - (83 - index));
   const dateStr = date.toISOString().split("T")[0];
   const level = (index * 7 + index) % 5;
   return { date: dateStr, count: level * 2, level };
 });
 
 const formatDateStr = (dateStr: string) => {
-  const [year, month, day] = dateStr.split("-").map(Number);
-  const date = new Date(year, month - 1, day);
-  return date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+  const date = new Date(`${dateStr}T00:00:00.000Z`);
+  return heatmapDateFormatter.format(date);
 };
 
 interface LiveStats {
@@ -38,12 +51,6 @@ type GithubRepoResponse = {
   language?: string | null;
 };
 
-type GithubContributionDay = {
-  date: string;
-  count: number;
-  level: number;
-};
-
 type GithubContributionResponse = {
   total?: Record<string, number>;
   contributions?: GithubContributionDay[];
@@ -51,7 +58,7 @@ type GithubContributionResponse = {
 
 export function GithubStats() {
   const [stats, setStats] = useState<LiveStats>(githubStats);
-  const [heatmapDays, setHeatmapDays] = useState<{ date: string; count: number; level: number }[]>(mockHeatmapDays);
+  const [heatmapDays, setHeatmapDays] = useState<GithubContributionDay[]>(mockHeatmapDays);
   const [isLive, setIsLive] = useState(false);
 
   useEffect(() => {
