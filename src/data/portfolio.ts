@@ -440,16 +440,15 @@ export const certifications: Certification[] = [
 ];
 
 export const githubStats = {
-  repos: 15,
-  stars: 6,
-  contributions: 107,
-  streak: 1,
+  repos: 13,
+  stars: 15,
+  contributions: 96,
+  streak: 0,
   languages: [
-    { name: "JavaScript", value: 46, color: "bg-yellow-300" },
-    { name: "CSS", value: 24, color: "bg-pink-400" },
-    { name: "HTML", value: 14, color: "bg-orange-400" },
-    { name: "C++", value: 9, color: "bg-sky-400" },
-    { name: "Other", value: 7, color: "bg-zinc-400" },
+    { name: "JavaScript", value: 42, color: "bg-yellow-400" },
+    { name: "HTML", value: 33, color: "bg-orange-500" },
+    { name: "TypeScript", value: 17, color: "bg-blue-500" },
+    { name: "EJS", value: 8, color: "bg-zinc-400" },
   ],
 };
 

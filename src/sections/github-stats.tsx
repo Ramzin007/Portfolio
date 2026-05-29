@@ -42,18 +42,10 @@ interface LiveStats {
   languages: { name: string; value: number; color: string }[];
 }
 
-type GithubUserResponse = {
-  public_repos?: number;
-};
-
-type GithubRepoResponse = {
-  stargazers_count?: number;
-  language?: string | null;
-};
-
-type GithubContributionResponse = {
-  total?: Record<string, number>;
-  contributions?: GithubContributionDay[];
+type GithubStatsApiResponse = {
+  stats: LiveStats;
+  heatmapDays: GithubContributionDay[];
+  isLive: boolean;
 };
 
 export function GithubStats() {
@@ -62,135 +54,42 @@ export function GithubStats() {
   const [isLive, setIsLive] = useState(false);
 
   useEffect(() => {
+    const controller = new AbortController();
+
     async function fetchStats() {
       try {
-        // Fetch basic profile info (includes repos count)
-        const userRes = await fetch("https://api.github.com/users/Ramzin007");
-        if (!userRes.ok) throw new Error("Failed to fetch profile");
-        const userData = (await userRes.json()) as GithubUserResponse;
-
-        // Fetch repos to calculate stars and languages
-        const reposRes = await fetch("https://api.github.com/users/Ramzin007/repos?per_page=100");
-        if (!reposRes.ok) throw new Error("Failed to fetch repositories");
-        const reposData = (await reposRes.json()) as GithubRepoResponse[];
-
-        let totalStars = 0;
-        const languageCounts: { [key: string]: number } = {};
-
-        reposData.forEach((repo) => {
-          totalStars += repo.stargazers_count || 0;
-          if (repo.language) {
-            languageCounts[repo.language] = (languageCounts[repo.language] || 0) + 1;
-          }
+        const response = await fetch("/api/github-stats", {
+          cache: "no-store",
+          signal: controller.signal,
         });
 
-        const languageColorMap: { [key: string]: string } = {
-          JavaScript: "bg-yellow-400",
-          TypeScript: "bg-blue-500",
-          HTML: "bg-orange-500",
-          CSS: "bg-pink-500",
-          "C++": "bg-sky-500",
-          Python: "bg-emerald-500",
-          Go: "bg-cyan-500",
-          Java: "bg-red-500",
-          Rust: "bg-orange-600",
-          C: "bg-zinc-500",
-          Shell: "bg-slate-500",
-        };
-
-        const totalLangCount = Object.values(languageCounts).reduce((a, b) => a + b, 0);
-        const sortedLanguages = Object.entries(languageCounts)
-          .map(([name, count]) => {
-            const pct = Math.round((count / totalLangCount) * 100);
-            return {
-              name,
-              value: pct,
-              color: languageColorMap[name] || "bg-zinc-400",
-            };
-          })
-          .sort((a, b) => b.value - a.value)
-          .slice(0, 5);
-
-        // Fetch live contribution calendar
-        let liveContributionsCount = githubStats.contributions;
-        let liveStreak = githubStats.streak;
-
-        try {
-          const calendarRes = await fetch("https://github-contributions-api.jogruber.de/v4/Ramzin007");
-          if (calendarRes.ok) {
-            const calendarData = (await calendarRes.json()) as GithubContributionResponse;
-
-            // Calculate total contributions
-            if (calendarData.total) {
-              liveContributionsCount = Object.values(calendarData.total).reduce(
-                (sum, val) => sum + val,
-                0
-              );
-            }
-
-            // Calculate current streak
-            if (calendarData.contributions) {
-              const sorted = [...calendarData.contributions].sort((a, b) =>
-                a.date.localeCompare(b.date)
-              );
-              const todayStr = new Date().toISOString().split("T")[0];
-              const filtered = sorted.filter((contribution) => contribution.date <= todayStr);
-
-              let currentStreak = 0;
-              const checkDate = new Date(todayStr);
-              const contribMap = new Map<string, number>(filtered.map((contribution) => [contribution.date, contribution.count]));
-
-              if ((contribMap.get(todayStr) || 0) > 0) {
-                currentStreak = 1;
-                while (true) {
-                  checkDate.setDate(checkDate.getDate() - 1);
-                  const dateStr = checkDate.toISOString().split("T")[0];
-                  if ((contribMap.get(dateStr) || 0) > 0) {
-                    currentStreak++;
-                  } else {
-                    break;
-                  }
-                }
-              } else {
-                checkDate.setDate(checkDate.getDate() - 1);
-                const yesterdayStr = checkDate.toISOString().split("T")[0];
-                if ((contribMap.get(yesterdayStr) || 0) > 0) {
-                  currentStreak = 1;
-                  while (true) {
-                    checkDate.setDate(checkDate.getDate() - 1);
-                    const dateStr = checkDate.toISOString().split("T")[0];
-                    if ((contribMap.get(dateStr) || 0) > 0) {
-                      currentStreak++;
-                    } else {
-                      break;
-                    }
-                  }
-                }
-              }
-              liveStreak = currentStreak || githubStats.streak;
-
-              // Set heatmap days (last 84 days)
-              const finalContributions = filtered.length >= 84 ? filtered.slice(-84) : sorted.slice(-84);
-              setHeatmapDays(finalContributions);
-            }
-          }
-        } catch (calErr) {
-          console.error("Error fetching live GitHub contribution calendar:", calErr);
+        if (!response.ok) {
+          throw new Error("Failed to fetch GitHub stats");
         }
 
-        setStats({
-          repos: userData.public_repos ?? githubStats.repos,
-          stars: totalStars,
-          contributions: liveContributionsCount,
-          streak: liveStreak,
-          languages: sortedLanguages.length > 0 ? sortedLanguages : githubStats.languages,
-        });
-        setIsLive(true);
+        const data = (await response.json()) as GithubStatsApiResponse;
+
+        setStats(data.stats);
+        if (data.heatmapDays.length > 0) {
+          setHeatmapDays(data.heatmapDays);
+        }
+        setIsLive(data.isLive);
       } catch (err) {
+        if (controller.signal.aborted) {
+          return;
+        }
+
         console.error("Error fetching live GitHub stats:", err);
       }
     }
+
     fetchStats();
+    const refreshInterval = window.setInterval(fetchStats, 10 * 60 * 1000);
+
+    return () => {
+      controller.abort();
+      window.clearInterval(refreshInterval);
+    };
   }, []);
 
   return (
