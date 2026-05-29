@@ -73,11 +73,12 @@ CONTACT_TO_EMAIL=
 2. Import the repository in Vercel.
 3. Keep the framework preset as Next.js.
 4. Add email provider environment variables if you wire real contact delivery.
-5. Deploy.
+5. Optional: add `GITHUB_TOKEN` for the most accurate GitHub contribution calendar.
+6. Deploy.
 
 Vercel will run `next build` automatically.
 
 ## Notes
 
 - The resume download points to `public/resume.pdf`; replace that file to update the downloadable resume.
-- The GitHub graph uses live fetches with portfolio-friendly fallbacks.
+- The GitHub graph uses live server-side fetches with portfolio-friendly fallbacks. For the closest match to the GitHub profile graph, set `GITHUB_TOKEN` in Vercel.
