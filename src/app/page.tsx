@@ -1,7 +1,6 @@
 import { About } from "@/sections/about";
 import { Contact } from "@/sections/contact";
 import { ExperienceEducation } from "@/sections/experience";
-import { GithubStats } from "@/sections/github-stats";
 import { Hero } from "@/sections/hero";
 import { Projects } from "@/sections/projects";
 import { Skills } from "@/sections/skills";
@@ -32,7 +31,6 @@ export default function Home() {
         <Skills />
         <Projects />
         <ExperienceEducation />
-        <GithubStats />
         <Contact />
       </main>
       <Footer />

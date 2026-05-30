@@ -4,7 +4,7 @@ A production-grade personal portfolio built with Next.js App Router, TypeScript,
 
 ## Highlights
 
-- Responsive recruiter/client-focused portfolio sections: hero, about, skills, projects, experience, education, certifications, GitHub stats, contact, and footer.
+- Responsive recruiter/client-focused portfolio sections: hero, about, skills, projects, experience, education, certifications, contact, and footer.
 - Premium interactive UI with sticky scrollspy navigation, command palette, theme persistence, scroll progress, subtle cursor interaction, animated reveals, project case-study modals, filters, search, toast states, and accessible controls.
 - SEO and platform readiness: Open Graph image, Twitter metadata, sitemap, robots.txt, manifest, favicon, semantic layout, optimized local SVG assets, and structured person data in the page.
 - API-ready contact form with Zod validation and a Next.js route prepared for Resend, Postmark, SendGrid, or webhook delivery.
@@ -48,7 +48,7 @@ Most content lives in:
 src/data/portfolio.ts
 ```
 
-Update the profile, projects, skills, certifications, and GitHub statistics there. Replace project screenshots in `public/images/projects` when available.
+Update the profile, projects, skills, and certifications there. Replace project screenshots in `public/images/projects` when available.
 
 ## Contact Email Integration
 
@@ -73,12 +73,10 @@ CONTACT_TO_EMAIL=
 2. Import the repository in Vercel.
 3. Keep the framework preset as Next.js.
 4. Add email provider environment variables if you wire real contact delivery.
-5. Optional: add `GITHUB_TOKEN` for the most accurate GitHub contribution calendar.
-6. Deploy.
+5. Deploy.
 
 Vercel will run `next build` automatically.
 
 ## Notes
 
 - The resume download points to `public/resume.pdf`; replace that file to update the downloadable resume.
-- The GitHub graph uses live server-side fetches with portfolio-friendly fallbacks. For the closest match to the GitHub profile graph, set `GITHUB_TOKEN` in Vercel.

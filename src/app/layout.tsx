@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Muhammed Ramzin P | Full Stack Developer",
     description:
-      "Modern portfolio with projects, backend-focused learning, certifications, GitHub stats, and contact flow.",
+      "Modern portfolio with projects, backend-focused learning, certifications, and contact flow.",
     url: "https://www.linkedin.com/in/muhammedramzinp/",
     siteName: "Muhammed Ramzin P Portfolio",
     images: [{ url: "/og.svg", width: 1200, height: 630, alt: "Muhammed Ramzin P portfolio preview" }],

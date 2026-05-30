@@ -439,19 +439,6 @@ export const certifications: Certification[] = [
   },
 ];
 
-export const githubStats = {
-  repos: 13,
-  stars: 15,
-  contributions: 96,
-  streak: 0,
-  languages: [
-    { name: "JavaScript", value: 42, color: "bg-yellow-400" },
-    { name: "HTML", value: 33, color: "bg-orange-500" },
-    { name: "TypeScript", value: 17, color: "bg-blue-500" },
-    { name: "EJS", value: 8, color: "bg-zinc-400" },
-  ],
-};
-
 export const commandItems = [
   { label: "Contact Me", href: "#contact", icon: Sparkles },
   { label: "View Projects", href: "#projects", icon: SquareTerminal },
