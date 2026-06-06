@@ -196,11 +196,11 @@ export const projects: Project[] = [
     github: "https://github.com/Ramzin007/Cinemapedia",
     demo: "https://cinemapedia-mocha.vercel.app/",
     screenshots: [
-      "/images/cinemapedia/home.png",
-      "/images/cinemapedia/movie-details.png",
-      "/images/cinemapedia/library.png",
-      "/images/cinemapedia/login.png",
-      "/images/cinemapedia/register.png",
+      "/images/projects/cinemapedia/home.png",
+      "/images/projects/cinemapedia/movie-details.png",
+      "/images/projects/cinemapedia/library.png",
+      "/images/projects/cinemapedia/login.png",
+      "/images/projects/cinemapedia/register.png",
     ],
   },
   {
