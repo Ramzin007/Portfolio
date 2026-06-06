@@ -176,7 +176,7 @@ export const projects: Project[] = [
     status: "Done",
     featured: true,
     category: "Full Stack",
-    thumbnail: "/images/cinemapedia/home.png",
+    thumbnail: "/images/projects/cinemapedia/home.png",
     description:
       "A movie discovery platform using OMDB API for browsing, searching, and exploring movies through a responsive interface.",
     tech: ["React.js", "Node.js", "JavaScript", "Tailwind CSS", "OMDB API", "REST APIs"],
