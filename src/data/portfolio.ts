@@ -173,10 +173,10 @@ export const projects: Project[] = [
   {
     id: "Cinemapedia",
     title: "Cinemapedia",
-    status: "In Progress",
+    status: "Done",
     featured: true,
     category: "Full Stack",
-    thumbnail: "/images/project-movie.svg",
+    thumbnail: "/images/cinemapedia/home.png",
     description:
       "A movie discovery platform using OMDB API for browsing, searching, and exploring movies through a responsive interface.",
     tech: ["React.js", "Node.js", "JavaScript", "Tailwind CSS", "OMDB API", "REST APIs"],
@@ -195,7 +195,13 @@ export const projects: Project[] = [
       "Optimized layout structure, lean API-driven rendering, and responsive image/card presentation.",
     github: "https://github.com/Ramzin007/Cinemapedia",
     demo: "",
-    screenshots: ["/images/project-movie.svg", "/images/project-blog.svg"],
+    screenshots: [
+      "/images/cinemapedia/home.png",
+      "/images/cinemapedia/movie-details.png",
+      "/images/cinemapedia/library.png",
+      "/images/cinemapedia/login.png",
+      "/images/cinemapedia/register.png",
+    ],
   },
   {
     id: "hack-europa",
@@ -257,7 +263,6 @@ export const projects: Project[] = [
     demo: "",
     screenshots: [
       "/images/projects/student-portal/student-portal-home.jpg",
-      "/images/project-student.svg",
     ],
   },
   {
