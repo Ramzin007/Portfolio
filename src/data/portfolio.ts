@@ -194,7 +194,7 @@ export const projects: Project[] = [
     performance:
       "Optimized layout structure, lean API-driven rendering, and responsive image/card presentation.",
     github: "https://github.com/Ramzin007/Cinemapedia",
-    demo: "",
+    demo: "https://cinemapedia-mocha.vercel.app/",
     screenshots: [
       "/images/cinemapedia/home.png",
       "/images/cinemapedia/movie-details.png",
