@@ -326,6 +326,44 @@ export const projects: Project[] = [
       "/images/projects/blog-web-app/blog-about.png",
     ],
   },
+  {
+    id: "mouse-marathon",
+    title: "MouseMarathon (Mouse-Odometer)",
+    status: "Open Source",
+    featured: true,
+    category: "Chrome Extension",
+    thumbnail: "/images/projects/mouse-marathon/odometer-leaderboard.png",
+    description:
+      "A Chrome extension that tracks physical cursor distance in real time across the web, features a live global Supabase leaderboard, and triggers hilarious full-screen Malayalam comedy meme jumpscares with audio alarms at distance milestones.",
+    tech: [
+      "JavaScript",
+      "Chrome Manifest V3",
+      "Supabase",
+      "PostgreSQL",
+      "PL/pgSQL",
+      "Web Audio API",
+      "HTML5 / CSS3",
+    ],
+    tags: ["Chrome Extension", "Supabase", "Real-Time", "Hackathon"],
+    features: [
+      "Real-time Euclidean distance tracking (0.264583 mm per pixel) with 200ms batch event flushing",
+      "Global live Top 10 leaderboard powered by Supabase and atomic PostgreSQL RPC increments",
+      "Milestone-triggered full-screen Malayalam meme jumpscare overlays with looping audio buzzer chaos",
+      "Manifest V3 architecture with background service workers, content scripts, and retro arcade popup UI",
+    ],
+    challenges:
+      "Maintaining high-performance cursor tracking without lagging browser DOM rendering, handling Manifest V3 service worker lifecycles, and ensuring race-condition-free leaderboard updates via atomic RPC functions.",
+    architecture:
+      "DOM content scripts capture mousemove events -> Euclidean calculations flushed every 200ms to background service worker -> syncs to Supabase PostgreSQL database via atomic RPC -> triggers celebration jumpscare and audio on active tab.",
+    performance:
+      "Throttled 200ms batch event flushing to eliminate DOM thrashing, lightweight retro UI styling, and atomic database functions to handle rapid concurrent updates.",
+    github: "https://github.com/Ramzin007/MouseMarathon",
+    demo: "https://drive.google.com/file/d/1WG5AxXAcvjSGU0DYkA6n3UWg-NxjrMJx/view",
+    screenshots: [
+      "/images/projects/mouse-marathon/odometer-leaderboard.png",
+      "/images/projects/mouse-marathon/jumpscare-overlay.png",
+    ],
+  },
 ];
 
 export const experiences: Experience[] = [
