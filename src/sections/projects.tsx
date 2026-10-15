@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ExternalLink, GitBranch, Search } from "lucide-react";
+import { ChevronDown, ExternalLink, GitBranch, Search } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useMemo, useState } from "react";
 import { projects } from "@/data/portfolio";
@@ -194,19 +194,41 @@ function ProjectCard({ project, large = false }: { project: Project; large?: boo
 export function Projects() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
+  const [showAll, setShowAll] = useState(false);
+
   const categories = ["All", ...Array.from(new Set(projects.map((project) => project.category)))];
+
   const matchesFilters = useCallback((project: Project) => {
     const matchesCategory = category === "All" || project.category === category;
     const haystack = `${project.title} ${project.description} ${project.tech.join(" ")}`.toLowerCase();
     return matchesCategory && haystack.includes(query.toLowerCase());
   }, [category, query]);
-  const featured = useMemo(
-    () => projects.filter((project) => project.featured && matchesFilters(project)),
+
+  const isFiltering = category !== "All" || query.trim().length > 0;
+
+  // When filtering or searching, show all matched projects
+  const filteredProjects = useMemo(
+    () => projects.filter(matchesFilters),
     [matchesFilters],
   );
-  const filtered = useMemo(
-    () => projects.filter((project) => !project.featured && matchesFilters(project)),
-    [matchesFilters],
+
+  // In default overview mode:
+  // 1. Hero project (VehicleOS or first featured)
+  // 2. Top 3 secondary featured projects (Row 2, 3 columns)
+  // 3. Remaining projects (revealed when showAll is true)
+  const heroProject = useMemo(
+    () => projects.find((p) => p.featured) || projects[0],
+    [],
+  );
+
+  const topProjects = useMemo(
+    () => projects.filter((p) => p.id !== heroProject.id).slice(0, 3),
+    [heroProject.id],
+  );
+
+  const remainingProjects = useMemo(
+    () => projects.filter((p) => p.id !== heroProject.id).slice(3),
+    [heroProject.id],
   );
 
   return (
@@ -219,13 +241,21 @@ export function Projects() {
       <div className="mb-8 grid gap-4 lg:grid-cols-[1fr_auto]">
         <div className="relative">
           <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-zinc-500" />
-          <Input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search projects by technology, category, or keyword" className="pl-11" />
+          <Input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Search projects by technology, category, or keyword"
+            className="pl-11"
+          />
         </div>
         <div className="flex flex-wrap gap-2">
           {categories.map((item) => (
             <button
               key={item}
-              onClick={() => setCategory(item)}
+              onClick={() => {
+                setCategory(item);
+                setShowAll(false);
+              }}
               className={cn(
                 "rounded-full border border-zinc-200 bg-white/70 px-4 py-2 text-sm font-semibold text-zinc-700 transition hover:border-cyan-300 dark:border-white/10 dark:bg-white/10 dark:text-zinc-200",
                 category === item && "bg-zinc-950 text-white dark:bg-white dark:text-zinc-950",
@@ -237,23 +267,93 @@ export function Projects() {
         </div>
       </div>
 
-      <div className="mb-10 grid gap-5 lg:grid-cols-3">
-        {featured.map((project, index) => (
-          <Reveal key={project.id} delay={index * 0.05} className={index === 0 ? "lg:col-span-3" : ""}>
-            <ProjectCard project={project} large={index === 0} />
-          </Reveal>
-        ))}
-      </div>
+      {isFiltering ? (
+        filteredProjects.length === 0 ? (
+          <div className="rounded-2xl border border-dashed border-zinc-300 py-16 text-center dark:border-white/10">
+            <p className="text-base text-zinc-500 dark:text-zinc-400">
+              No projects found matching your search.
+            </p>
+            <button
+              onClick={() => {
+                setQuery("");
+                setCategory("All");
+              }}
+              className="mt-3 text-sm font-semibold text-cyan-600 hover:underline dark:text-cyan-400"
+            >
+              Clear filters
+            </button>
+          </div>
+        ) : (
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {filteredProjects.map((project, index) => (
+              <Reveal key={project.id} delay={index * 0.04}>
+                <ProjectCard project={project} />
+              </Reveal>
+            ))}
+          </div>
+        )
+      ) : (
+        <>
+          {/* Hero Spotlight Card (Full Width) */}
+          <div className="mb-6">
+            <Reveal key={heroProject.id}>
+              <ProjectCard project={heroProject} large />
+            </Reveal>
+          </div>
 
-      <AnimatePresence mode="popLayout">
-        <motion.div layout className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {filtered.map((project) => (
-            <motion.div key={project.id} layout initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 12 }}>
-              <ProjectCard project={project} />
-            </motion.div>
-          ))}
-        </motion.div>
-      </AnimatePresence>
+          {/* Top 3 Featured Projects (Balanced 3-column Row) */}
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {topProjects.map((project, index) => (
+              <Reveal key={project.id} delay={(index + 1) * 0.05}>
+                <ProjectCard project={project} />
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Collapsible Remaining Projects */}
+          <AnimatePresence>
+            {showAll && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <div className="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                  {remainingProjects.map((project, index) => (
+                    <motion.div
+                      key={project.id}
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                    >
+                      <ProjectCard project={project} />
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Toggle Expand / Collapse Button */}
+          {remainingProjects.length > 0 && (
+            <div className="mt-10 flex justify-center">
+              <Button
+                variant="secondary"
+                size="lg"
+                onClick={() => setShowAll((prev) => !prev)}
+                className="group inline-flex items-center gap-2 rounded-full border border-zinc-200/80 bg-white/80 px-6 py-2.5 text-sm font-semibold shadow-soft backdrop-blur-md transition hover:border-cyan-400 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:border-cyan-500/40 dark:hover:bg-white/10"
+              >
+                <span>{showAll ? "Show Less" : `View All Projects (${projects.length})`}</span>
+                <ChevronDown
+                  className={cn("size-4 transition-transform duration-300", showAll && "rotate-180")}
+                />
+              </Button>
+            </div>
+          )}
+        </>
+      )}
     </Section>
   );
 }
