@@ -1,0 +1,192 @@
+<svg width="900" height="640" viewBox="0 0 900 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="vosBgGrad" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#083324" />
+      <stop offset="45%" stop-color="#041810" />
+      <stop offset="100%" stop-color="#020805" />
+    </radialGradient>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#072218" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#03130d" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="emeraldText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <linearGradient id="cyanText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+    <linearGradient id="amberBadge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <filter id="emeraldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="900" height="640" rx="24" fill="url(#vosBgGrad)" />
+  <rect width="900" height="640" rx="24" fill="none" stroke="#10b981" stroke-opacity="0.25" stroke-width="2" />
+
+  <!-- Top Navigation & Brand Bar -->
+  <g transform="translate(48, 40)">
+    <rect width="804" height="64" rx="16" fill="url(#cardBg)" stroke="#10b981" stroke-opacity="0.2" stroke-width="1.5" />
+    <!-- Brandmark Pill -->
+    <rect x="20" y="16" width="32" height="32" rx="8" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1.5" />
+    <path d="M28 32 L36 24 L44 32 L36 40 Z" fill="#34d399" />
+    <text x="64" y="38" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="19" font-weight="700" letter-spacing="0.5">VehicleOS</text>
+    <text x="175" y="38" fill="#10b981" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" letter-spacing="1">TELEMETRY SYSTEM</text>
+
+    <!-- Vehicle Selector Pill -->
+    <rect x="520" y="16" width="168" height="32" rx="8" fill="#041b12" stroke="#10b981" stroke-opacity="0.4" stroke-width="1" />
+    <circle cx="536" cy="32" r="4" fill="#10b981" filter="url(#emeraldGlow)" />
+    <text x="548" y="37" fill="#d1fae5" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">TVS Ronin 225</text>
+    <text x="662" y="37" fill="#6ee7b7" font-family="system-ui, -apple-system, sans-serif" font-size="12">▾</text>
+
+    <!-- PWA Live Pill -->
+    <rect x="704" y="16" width="80" height="32" rx="8" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-opacity="0.5" stroke-width="1" />
+    <text x="744" y="37" text-anchor="middle" fill="#34d399" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700">PWA 5G</text>
+  </g>
+
+  <!-- Left Column: Proprietary Vehicle Care Score (Health Engine) -->
+  <g transform="translate(48, 128)">
+    <rect width="260" height="464" rx="20" fill="url(#cardBg)" stroke="#10b981" stroke-opacity="0.25" stroke-width="1.5" />
+    <text x="24" y="36" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" letter-spacing="1">VEHICLE HEALTH ENGINE</text>
+    <text x="24" y="60" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700">Care Score™</text>
+
+    <!-- Radial Meter Arc -->
+    <circle cx="130" cy="165" r="70" fill="none" stroke="#04261a" stroke-width="14" />
+    <circle cx="130" cy="165" r="70" fill="none" stroke="#10b981" stroke-width="14" stroke-linecap="round" stroke-dasharray="440" stroke-dashoffset="65" filter="url(#emeraldGlow)" />
+    <text x="130" y="165" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="46" font-weight="800">92</text>
+    <text x="130" y="190" text-anchor="middle" fill="#34d399" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">EXCELLENT</text>
+
+    <!-- Weight Breakdown Metrics -->
+    <g transform="translate(24, 255)">
+      <!-- Maintenance Compliance (35%) -->
+      <text x="0" y="14" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="12">Maintenance (35%)</text>
+      <text x="212" y="14" text-anchor="end" fill="#34d399" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">100%</text>
+      <rect x="0" y="22" width="212" height="6" rx="3" fill="#04261a" />
+      <rect x="0" y="22" width="212" height="6" rx="3" fill="#10b981" />
+
+      <!-- Document Validity (30%) -->
+      <text x="0" y="52" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="12">Documents (30%)</text>
+      <text x="212" y="52" text-anchor="end" fill="#34d399" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">95%</text>
+      <rect x="0" y="60" width="212" height="6" rx="3" fill="#04261a" />
+      <rect x="0" y="60" width="201" height="6" rx="3" fill="#10b981" />
+
+      <!-- Refueling Consistency (20%) -->
+      <text x="0" y="90" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="12">Refuel Logs (20%)</text>
+      <text x="212" y="90" text-anchor="end" fill="#38bdf8" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">88%</text>
+      <rect x="0" y="98" width="212" height="6" rx="3" fill="#04261a" />
+      <rect x="0" y="98" width="186" height="6" rx="3" fill="#38bdf8" />
+
+      <!-- Odometer Recency (15%) -->
+      <text x="0" y="128" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="12">Odo Recency (15%)</text>
+      <text x="212" y="128" text-anchor="end" fill="#34d399" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">90%</text>
+      <rect x="0" y="136" width="212" height="6" rx="3" fill="#04261a" />
+      <rect x="0" y="136" width="190" height="6" rx="3" fill="#10b981" />
+
+      <!-- Odometer Badge -->
+      <rect x="0" y="160" width="212" height="32" rx="8" fill="#041b12" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+      <text x="12" y="181" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="12">Odometer</text>
+      <text x="200" y="181" text-anchor="end" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">12,480 km</text>
+    </g>
+  </g>
+
+  <!-- Right Area: Telemetry, Predictive Maintenance, Compliance & Stations -->
+  <g transform="translate(328, 128)">
+    <!-- Top Row: Fuel Telemetry Engine & Dual Trigger Service -->
+    <!-- Fuel Telemetry Card -->
+    <rect width="252" height="216" rx="20" fill="url(#cardBg)" stroke="#10b981" stroke-opacity="0.25" stroke-width="1.5" />
+    <text x="20" y="32" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" letter-spacing="1">FUEL ECONOMY ENGINE</text>
+    <text x="20" y="70" fill="url(#emeraldText)" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="800">38.4 <tspan font-size="16" font-weight="500" fill="#9ca3af">km/L</tspan></text>
+    <text x="20" y="96" fill="#d1fae5" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500">Rolling Tank Average</text>
+
+    <g transform="translate(20, 120)">
+      <rect width="100" height="42" rx="10" fill="#031a12" stroke="#10b981" stroke-opacity="0.2" stroke-width="1" />
+      <text x="10" y="18" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="10">RUNNING COST</text>
+      <text x="10" y="34" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">₹2.68 / km</text>
+
+      <rect x="112" y="0" width="100" height="42" rx="10" fill="#031a12" stroke="#10b981" stroke-opacity="0.2" stroke-width="1" />
+      <text x="122" y="18" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="10">EST. RANGE</text>
+      <text x="122" y="34" fill="#38bdf8" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">460 km</text>
+    </g>
+    <text x="20" y="196" fill="#6ee7b7" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500">✓ Full fill-up sync &amp; missed-refill reset</text>
+
+    <!-- Dual-Trigger Maintenance Card -->
+    <g transform="translate(272, 0)">
+      <rect width="252" height="216" rx="20" fill="url(#cardBg)" stroke="#10b981" stroke-opacity="0.25" stroke-width="1.5" />
+      <text x="20" y="32" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" letter-spacing="1">PREDICTIVE SERVICE</text>
+      <text x="20" y="58" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="700">Dual-Trigger Forecast</text>
+
+      <!-- Task 1: Engine Oil -->
+      <g transform="translate(20, 74)">
+        <rect width="212" height="54" rx="12" fill="#041f16" stroke="#10b981" stroke-opacity="0.25" stroke-width="1" />
+        <text x="12" y="22" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">Engine Oil &amp; Filter</text>
+        <text x="12" y="42" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="11">Due @ 13,000 km / 24d</text>
+        <rect x="142" y="14" width="58" height="20" rx="6" fill="#10b981" fill-opacity="0.2" />
+        <text x="171" y="28" text-anchor="middle" fill="#34d399" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700">SCHEDULED</text>
+      </g>
+
+      <!-- Task 2: Chain Clean & Lube (Due Soon) -->
+      <g transform="translate(20, 138)">
+        <rect width="212" height="54" rx="12" fill="#1f1804" stroke="#f59e0b" stroke-opacity="0.35" stroke-width="1" />
+        <text x="12" y="22" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">Drive Chain Clean &amp; Lube</text>
+        <text x="12" y="42" fill="#fbbf24" font-family="system-ui, -apple-system, sans-serif" font-size="11">Due in 120 km (overdue)</text>
+        <rect x="142" y="14" width="58" height="20" rx="6" fill="#f59e0b" fill-opacity="0.2" />
+        <text x="171" y="28" text-anchor="middle" fill="#fbbf24" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700">DUE SOON</text>
+      </g>
+    </g>
+
+    <!-- Bottom Row: Digital Document Vault & Geolocation Station Finder -->
+    <g transform="translate(0, 236)">
+      <!-- Document Compliance Card -->
+      <rect width="252" height="228" rx="20" fill="url(#cardBg)" stroke="#10b981" stroke-opacity="0.25" stroke-width="1.5" />
+      <text x="20" y="32" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" letter-spacing="1">COMPLIANCE VAULT</text>
+      <text x="20" y="58" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="700">Digital Document Center</text>
+
+      <g transform="translate(20, 76)">
+        <!-- RC -->
+        <circle cx="10" cy="14" r="5" fill="#10b981" />
+        <text x="26" y="18" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">Registration (RC)</text>
+        <text x="212" y="18" text-anchor="end" fill="#34d399" font-family="system-ui, -apple-system, sans-serif" font-size="11">Valid (2038)</text>
+
+        <!-- Insurance -->
+        <circle cx="10" cy="46" r="5" fill="#38bdf8" />
+        <text x="26" y="50" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">Insurance (Comprehensive)</text>
+        <text x="212" y="50" text-anchor="end" fill="#38bdf8" font-family="system-ui, -apple-system, sans-serif" font-size="11">Expires in 64d</text>
+
+        <!-- PUC -->
+        <circle cx="10" cy="78" r="5" fill="#f59e0b" />
+        <text x="26" y="82" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">Pollution Certificate (PUC)</text>
+        <text x="212" y="82" text-anchor="end" fill="#fbbf24" font-family="system-ui, -apple-system, sans-serif" font-size="11">Due in 18d</text>
+
+        <rect x="0" y="104" width="212" height="32" rx="8" fill="#041f16" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+        <text x="106" y="125" text-anchor="middle" fill="#34d399" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600">🛡 Proactive Expiry Push Alerts</text>
+      </g>
+
+      <!-- Geolocation Fuel Finder Card -->
+      <g transform="translate(272, 0)">
+        <rect width="252" height="228" rx="20" fill="url(#cardBg)" stroke="#10b981" stroke-opacity="0.25" stroke-width="1.5" />
+        <text x="20" y="32" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" letter-spacing="1">GPS STATION FINDER</text>
+        <text x="20" y="58" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="700">Nearby Petrol Stations</text>
+
+        <g transform="translate(20, 76)">
+          <rect width="212" height="60" rx="12" fill="#041f16" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+          <text x="12" y="22" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">IndianOil - Superfuel COCO</text>
+          <text x="12" y="42" fill="#38bdf8" font-family="system-ui, -apple-system, sans-serif" font-size="11">📍 1.2 km away • XP95 Available</text>
+          <rect x="156" y="32" width="44" height="20" rx="6" fill="#10b981" />
+          <text x="178" y="45" text-anchor="middle" fill="#041810" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="800">ROUTE</text>
+
+          <rect x="0" y="70" width="212" height="66" rx="12" fill="#03160f" stroke="#10b981" stroke-opacity="0.15" stroke-width="1" />
+          <text x="12" y="22" fill="#d1d5db" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">Bharat Petroleum (BPCL)</text>
+          <text x="12" y="42" fill="#9ca3af" font-family="system-ui, -apple-system, sans-serif" font-size="11">📍 2.8 km away • Open 24 Hours</text>
+          <text x="12" y="58" fill="#10b981" font-family="system-ui, -apple-system, sans-serif" font-size="10">Speed Petrol &amp; Nitrogen Air</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

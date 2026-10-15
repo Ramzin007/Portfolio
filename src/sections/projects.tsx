@@ -51,8 +51,20 @@ function ProjectDetails({ project }: { project: Project }) {
           {project.tech.map((tech) => <Badge key={tech}>{tech}</Badge>)}
         </div>
         <div className="mt-7 grid gap-5">
+          {project.features?.length ? (
+            <div>
+              <h4 className="font-semibold text-zinc-950 dark:text-white">Key Features</h4>
+              <ul className="mt-2.5 space-y-2 text-zinc-600 dark:text-zinc-300">
+                {project.features.map((feat, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5 text-sm leading-6">
+                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-cyan-500" />
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
           {[
-            ["Key features", project.features.join(" • ")],
             ["Challenge", project.challenges],
             ["Architecture", project.architecture],
             ["Performance", project.performance],
@@ -65,9 +77,19 @@ function ProjectDetails({ project }: { project: Project }) {
         </div>
         <div className="mt-7 flex flex-wrap gap-3">
           {project.demo ? (
-            <Button asChild><a href={project.demo} target="_blank" rel="noreferrer"><ExternalLink className="size-4" /> Live Demo</a></Button>
+            <Button asChild>
+              <a href={project.demo} target="_blank" rel="noreferrer">
+                <ExternalLink className="size-4" /> Live Demo
+              </a>
+            </Button>
           ) : null}
-          <Button asChild variant="secondary"><a href={project.github} target="_blank" rel="noreferrer"><GitBranch className="size-4" /> GitHub</a></Button>
+          {project.github ? (
+            <Button asChild variant="secondary">
+              <a href={project.github} target="_blank" rel="noreferrer">
+                <GitBranch className="size-4" /> View Code
+              </a>
+            </Button>
+          ) : null}
         </div>
       </div>
     </div>
@@ -96,19 +118,42 @@ function ProjectCard({ project, large = false }: { project: Project; large?: boo
             {project.tags.map((tag) => <Badge key={tag}>{tag}</Badge>)}
           </div>
           <h3 className="mt-4 text-2xl font-semibold text-zinc-950 dark:text-white">{project.title}</h3>
-          <p className="mt-3 flex-1 leading-7 text-zinc-600 dark:text-zinc-300">{project.description}</p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {project.tech.slice(0, 4).map((tech) => <span key={tech} className="text-xs font-semibold text-zinc-500">{tech}</span>)}
+          <p className="mt-3 leading-7 text-zinc-600 dark:text-zinc-300">{project.description}</p>
+          {large && project.features?.length ? (
+            <ul className="mt-3.5 space-y-1.5 border-t border-zinc-100 pt-3 dark:border-white/5">
+              {project.features.slice(0, 3).map((feat, idx) => (
+                <li key={idx} className="flex items-start gap-2 text-xs leading-5 text-zinc-500 dark:text-zinc-400">
+                  <span className="mt-1.5 size-1 shrink-0 rounded-full bg-cyan-500" />
+                  <span className="line-clamp-1">{feat}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+          <div className="mt-5 flex flex-wrap gap-1.5">
+            {project.tech.slice(0, 5).map((tech) => (
+              <span key={tech} className="rounded-md bg-zinc-100 px-2 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+                {tech}
+              </span>
+            ))}
           </div>
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-2.5">
             <DialogTrigger asChild>
               <Button variant="gradient">Case Study</Button>
             </DialogTrigger>
             {project.demo ? (
-              <Button asChild variant="secondary"><a href={project.demo} target="_blank" rel="noreferrer">Demo</a></Button>
-            ) : (
-              <Button asChild variant="secondary"><a href={project.github} target="_blank" rel="noreferrer">Source</a></Button>
-            )}
+              <Button asChild variant="secondary" size="sm">
+                <a href={project.demo} target="_blank" rel="noreferrer">
+                  <ExternalLink className="size-3.5" /> Live Demo
+                </a>
+              </Button>
+            ) : null}
+            {project.github ? (
+              <Button asChild variant="secondary" size="sm">
+                <a href={project.github} target="_blank" rel="noreferrer">
+                  <GitBranch className="size-3.5" /> View Code
+                </a>
+              </Button>
+            ) : null}
           </div>
         </div>
       </Card>

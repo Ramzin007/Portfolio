@@ -1,0 +1,87 @@
+<svg width="600" height="800" viewBox="0 0 600 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="mBg" cx="50%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#072b1e" />
+      <stop offset="60%" stop-color="#03140d" />
+      <stop offset="100%" stop-color="#010704" />
+    </radialGradient>
+    <linearGradient id="mEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+  </defs>
+
+  <!-- Mobile Screen Shell -->
+  <rect width="600" height="800" rx="32" fill="url(#mBg)" />
+  <rect width="600" height="800" rx="32" fill="none" stroke="#10b981" stroke-opacity="0.3" stroke-width="2" />
+
+  <!-- Dynamic Island / Header -->
+  <rect x="230" y="16" width="140" height="24" rx="12" fill="#000000" />
+  <text x="300" y="32" text-anchor="middle" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="11" font-weight="600">VehicleOS PWA</text>
+
+  <!-- Status Bar & Multi-Vehicle Switcher -->
+  <g transform="translate(36, 60)">
+    <rect width="528" height="60" rx="16" fill="#041f15" stroke="#10b981" stroke-opacity="0.3" stroke-width="1" />
+    <circle cx="30" cy="30" r="12" fill="#10b981" fill-opacity="0.2" />
+    <path d="M25 30 L30 25 L35 30 L30 35 Z" fill="#34d399" />
+    <text x="56" y="36" fill="#ffffff" font-family="system-ui, sans-serif" font-size="17" font-weight="700">TVS Ronin 225</text>
+    <rect x="420" y="16" width="92" height="28" rx="8" fill="#10b981" />
+    <text x="466" y="35" text-anchor="middle" fill="#02140b" font-family="system-ui, sans-serif" font-size="12" font-weight="800">GARAGE</text>
+  </g>
+
+  <!-- Care Score Big Dial -->
+  <g transform="translate(36, 140)">
+    <rect width="528" height="180" rx="20" fill="#041a12" stroke="#10b981" stroke-opacity="0.25" stroke-width="1" />
+    <text x="24" y="34" fill="#9ca3af" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1">VEHICLE CARE SCORE</text>
+    <circle cx="95" cy="105" r="50" fill="none" stroke="#063322" stroke-width="10" />
+    <circle cx="95" cy="105" r="50" fill="none" stroke="#10b981" stroke-width="10" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="40" />
+    <text x="95" y="112" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="32" font-weight="800">92</text>
+
+    <text x="175" y="80" fill="#ffffff" font-family="system-ui, sans-serif" font-size="20" font-weight="700">Peak Vehicle Health</text>
+    <text x="175" y="106" fill="#34d399" font-family="system-ui, sans-serif" font-size="14" font-weight="600">All systems &amp; compliance updated</text>
+    <text x="175" y="132" fill="#9ca3af" font-family="system-ui, sans-serif" font-size="12">Next service recommended in 420 km</text>
+  </g>
+
+  <!-- Mobile Quick Action Grid -->
+  <g transform="translate(36, 340)">
+    <rect width="254" height="120" rx="18" fill="#041a12" stroke="#10b981" stroke-opacity="0.2" stroke-width="1" />
+    <text x="20" y="32" fill="#9ca3af" font-family="system-ui, sans-serif" font-size="11" font-weight="600">AVG MILEAGE</text>
+    <text x="20" y="68" fill="url(#mEmerald)" font-family="system-ui, sans-serif" font-size="28" font-weight="800">38.4 <tspan font-size="14" fill="#9ca3af">km/L</tspan></text>
+    <text x="20" y="96" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="12">₹2.68 / km running cost</text>
+
+    <g transform="translate(274, 0)">
+      <rect width="254" height="120" rx="18" fill="#041a12" stroke="#10b981" stroke-opacity="0.2" stroke-width="1" />
+      <text x="20" y="32" fill="#9ca3af" font-family="system-ui, sans-serif" font-size="11" font-weight="600">NEXT DUE SERVICE</text>
+      <text x="20" y="68" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="24" font-weight="800">Drive Chain</text>
+      <text x="20" y="96" fill="#fde68a" font-family="system-ui, sans-serif" font-size="12">Due Soon • Clean &amp; Lube</text>
+    </g>
+  </g>
+
+  <!-- Compliance Overview in Mobile -->
+  <g transform="translate(36, 480)">
+    <rect width="528" height="180" rx="20" fill="#041a12" stroke="#10b981" stroke-opacity="0.25" stroke-width="1" />
+    <text x="24" y="34" fill="#9ca3af" font-family="system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1">DIGITAL DOCUMENT VAULT</text>
+
+    <g transform="translate(24, 55)">
+      <rect width="480" height="40" rx="10" fill="#031f15" />
+      <text x="16" y="25" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">RC: KL-07-CM-4281</text>
+      <text x="464" y="25" text-anchor="end" fill="#34d399" font-family="system-ui, sans-serif" font-size="12" font-weight="700">ACTIVE</text>
+    </g>
+
+    <g transform="translate(24, 105)">
+      <rect width="480" height="40" rx="10" fill="#031f15" />
+      <text x="16" y="25" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Insurance: Comprehensive</text>
+      <text x="464" y="25" text-anchor="end" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="700">64 DAYS LEFT</text>
+    </g>
+  </g>
+
+  <!-- Bottom Navigation Bar -->
+  <g transform="translate(36, 680)">
+    <rect width="528" height="68" rx="20" fill="#02110a" stroke="#10b981" stroke-opacity="0.4" stroke-width="1" />
+    <text x="66" y="40" text-anchor="middle" fill="#34d399" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Dashboard</text>
+    <text x="172" y="40" text-anchor="middle" fill="#9ca3af" font-family="system-ui, sans-serif" font-size="12">Fuel</text>
+    <text x="278" y="40" text-anchor="middle" fill="#9ca3af" font-family="system-ui, sans-serif" font-size="12">Service</text>
+    <text x="384" y="40" text-anchor="middle" fill="#9ca3af" font-family="system-ui, sans-serif" font-size="12">Docs</text>
+    <text x="475" y="40" text-anchor="middle" fill="#9ca3af" font-family="system-ui, sans-serif" font-size="12">Stations</text>
+  </g>
+</svg>

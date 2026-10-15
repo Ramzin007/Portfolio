@@ -46,9 +46,9 @@ export const navItems: NavItem[] = [
 ];
 
 export const counters = [
-  { label: "Projects completed", value: 10, suffix: "+" },
-  { label: "Technologies learned", value: 10, suffix: "+" },
-  { label: "GitHub commits", value: 150, suffix: "+" },
+  { label: "Projects completed", value: 12, suffix: "+" },
+  { label: "Technologies learned", value: 12, suffix: "+" },
+  { label: "GitHub commits", value: 160, suffix: "+" },
   { label: "Certifications", value: 6, suffix: "+" },
 ];
 
@@ -137,6 +137,50 @@ export const skillCategories: SkillCategory[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    id: "vehicle-os",
+    title: "VehicleOS — Smart Vehicle Companion & Telemetry System",
+    status: "Live",
+    featured: true,
+    category: "Full Stack",
+    thumbnail: "/images/projects/vehicle-os/dashboard.png",
+    description:
+      "Mobile-first telemetry dashboard for motorcycles and cars featuring real-time fuel economy computation, dual-trigger maintenance forecasting, and digital document compliance.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Prisma ORM",
+      "PostgreSQL",
+      "PWA",
+      "JWT Auth",
+    ],
+    tags: ["IoT Telemetry", "Next.js", "Mobile PWA", "Full Stack"],
+    features: [
+      "Telemetry & Fuel Engine: Rolling fuel economy algorithms (km/L, cost/km) handling full and partial fill-ups with automatic missed-refill reset logic.",
+      "Dual-Trigger Predictive Maintenance: Tracks service intervals using both odometer distance (km) and calendar timelines with automated OVERDUE and DUE_SOON states.",
+      "Proprietary Vehicle Care Score (0–100): Weighted health engine assessing maintenance compliance (35%), document validity (30%), refueling consistency (20%), and odometer freshness (15%).",
+      "Multi-Vehicle Garage: Instant switching between motorcycles and cars with vehicle-scoped client caching (0ms perceived latency).",
+      "Digital Document Vault: Expiry tracking for RC, Insurance, and PUC certificates with proactive renewal alerts.",
+      "GPS Station Finder: Interactive geolocation map locating nearby fuel stations with one-tap navigation.",
+      "Mobile-First PWA: Installable progressive web app with offline caching, responsive dark-mode automotive aesthetic, and custom vector brandmark.",
+    ],
+    challenges:
+      "Formulating a resilient rolling fuel economy algorithm that accounts for missed fill-ups and partial refills, alongside calculating a unified 0-100 Vehicle Care Score across asynchronous telemetry, compliance, and dual-trigger maintenance timelines.",
+    architecture:
+      "Next.js App Router architecture with Prisma ORM data modeling, modular REST API endpoints for telemetry, maintenance, and compliance, local offline PWA caching with Service Workers, and client-side reactive state management.",
+    performance:
+      "Vehicle-scoped client state caching for zero-latency vehicle switching, optimized SVG vector graphics, PWA offline service workers, and debounced geolocation station queries.",
+    github: "https://github.com/Ramzin007/vehicle-os",
+    demo: "https://vehicle-os-one.vercel.app/",
+    screenshots: [
+      "/images/projects/vehicle-os/dashboard.png",
+      "/images/projects/vehicle-os/fuel.png",
+      "/images/projects/vehicle-os/maintenance.png",
+      "/images/projects/vehicle-os/documents.png",
+      "/images/projects/vehicle-os/expenses.png",
+    ],
+  },
   {
     id: "bloodlink",
     title: "BloodLink",
